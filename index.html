@@ -11,19 +11,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --bg: #f3f7ff;
-      --bg-soft: #eef4ff;
-      --panel: rgba(255, 255, 255, 0.88);
-      --panel-solid: #ffffff;
-      --border: rgba(127, 156, 216, 0.2);
-      --border-strong: rgba(74, 116, 210, 0.24);
-      --text: #16203b;
-      --muted: #62708e;
-      --accent: #3b6df6;
-      --accent-2: #6aa6ff;
-      --accent-3: #8fd2ff;
-      --chip: #edf3ff;
-      --shadow: 0 24px 60px rgba(27, 52, 102, 0.14);
+      --bg: #eef3fa;
+      --bg-soft: #e7edf7;
+      --panel: rgba(255, 255, 255, 0.76);
+      --panel-solid: #fbfdff;
+      --border: rgba(121, 140, 176, 0.18);
+      --border-strong: rgba(74, 116, 210, 0.18);
+      --text: #1a2742;
+      --muted: #62708a;
+      --accent: #3f6cf0;
+      --accent-2: #6a92ff;
+      --accent-3: #9bc2ff;
+      --chip: #edf3fb;
+      --surface-grad: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 255, 0.88));
+      --surface-grad-soft: linear-gradient(180deg, rgba(250, 252, 255, 0.94), rgba(238, 244, 252, 0.9));
+      --surface-grad-hero: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(236, 243, 253, 0.9));
+      --surface-grad-accent: linear-gradient(180deg, rgba(248, 251, 255, 0.96), rgba(232, 241, 255, 0.94));
+      --shadow: 0 24px 60px rgba(28, 45, 78, 0.12);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -43,11 +47,12 @@
 
     body {
       font-family: "Manrope", sans-serif;
+      font-weight: 400;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(111, 175, 255, 0.24), transparent 28%),
-        radial-gradient(circle at top right, rgba(59, 109, 246, 0.16), transparent 22%),
-        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+        radial-gradient(circle at 10% 8%, rgba(123, 164, 235, 0.2), transparent 24%),
+        radial-gradient(circle at 88% 10%, rgba(95, 133, 214, 0.12), transparent 20%),
+        linear-gradient(180deg, #f9fbfe 0%, var(--bg) 100%);
       min-height: 100vh;
     }
 
@@ -66,7 +71,7 @@
       height: 320px;
       top: 100px;
       right: -80px;
-      background: rgba(90, 141, 255, 0.16);
+      background: rgba(94, 135, 220, 0.14);
       border-radius: 50%;
     }
 
@@ -75,7 +80,7 @@
       height: 280px;
       left: -60px;
       bottom: 60px;
-      background: rgba(143, 210, 255, 0.18);
+      background: rgba(151, 186, 235, 0.16);
       border-radius: 50%;
     }
 
@@ -102,7 +107,7 @@
       top: 16px;
       height: calc(100vh - 32px);
       padding: 24px 18px;
-      background: rgba(255, 255, 255, 0.75);
+      background: var(--surface-grad-soft);
       backdrop-filter: blur(18px);
       border: 1px solid var(--border);
       border-radius: 30px;
@@ -123,8 +128,8 @@
       width: 48px;
       height: 48px;
       border-radius: 16px;
-      background: linear-gradient(135deg, rgba(59, 109, 246, 0.12), rgba(143, 210, 255, 0.24));
-      border: 1px solid rgba(59, 109, 246, 0.16);
+      background: linear-gradient(135deg, rgba(244, 248, 253, 0.98), rgba(228, 237, 249, 0.94));
+      border: 1px solid rgba(121, 140, 176, 0.14);
       display: grid;
       place-items: center;
       flex-shrink: 0;
@@ -176,7 +181,7 @@
     .nav-link:hover,
     .nav-link.is-active {
       color: var(--accent);
-      background: linear-gradient(135deg, rgba(59, 109, 246, 0.1), rgba(143, 210, 255, 0.12));
+      background: linear-gradient(135deg, rgba(240, 245, 253, 0.98), rgba(229, 238, 250, 0.96));
       transform: translateX(3px);
     }
 
@@ -189,7 +194,7 @@
     .sidebar-note {
       padding: 14px 16px;
       border-radius: 18px;
-      background: linear-gradient(180deg, #f7fbff, #eef5ff);
+      background: var(--surface-grad-accent);
       border: 1px solid var(--border);
     }
 
@@ -228,10 +233,10 @@
       min-height: 44px;
       padding: 0 16px;
       border-radius: 14px;
-      background: var(--panel-solid);
+      background: var(--surface-grad);
       border: 1px solid var(--border);
       color: var(--muted);
-      box-shadow: 0 10px 24px rgba(37, 72, 135, 0.08);
+      box-shadow: 0 10px 24px rgba(37, 72, 135, 0.07);
       width: 100%;
       min-width: 0;
       white-space: nowrap;
@@ -245,9 +250,9 @@
       min-height: 48px;
       padding: 0 18px;
       border-radius: 16px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, #3c68ea, #6b92ff);
       color: #ffffff;
-      box-shadow: 0 18px 34px rgba(59, 109, 246, 0.24);
+      box-shadow: 0 18px 34px rgba(63, 108, 240, 0.22);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
@@ -265,10 +270,10 @@
       min-height: 48px;
       padding: 0 18px;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.7);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 248, 255, 0.9));
       color: var(--text);
       border: 1px solid var(--border);
-      box-shadow: 0 16px 28px rgba(41, 74, 128, 0.08);
+      box-shadow: 0 16px 28px rgba(41, 74, 128, 0.06);
     }
 
     .workspace {
@@ -288,10 +293,10 @@
       min-height: 72px;
       padding: 18px 24px;
       border-radius: 28px;
-      background: rgba(255, 255, 255, 0.76);
+      background: var(--surface-grad-soft);
       backdrop-filter: blur(18px);
       border: 1px solid var(--border);
-      box-shadow: 0 18px 44px rgba(35, 65, 121, 0.1);
+      box-shadow: 0 18px 44px rgba(35, 65, 121, 0.08);
     }
 
     .topbar-copy strong {
@@ -310,6 +315,44 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(240, 246, 254, 0.92));
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 24px rgba(37, 72, 135, 0.06);
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      min-width: 46px;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .lang-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.is-active {
+      color: #ffffff;
+      background: linear-gradient(135deg, #3c68ea, #6b92ff);
+      box-shadow: 0 10px 20px rgba(63, 108, 240, 0.18);
     }
 
     .page {
@@ -320,7 +363,7 @@
     .section-card {
       position: relative;
       padding: 26px;
-      background: var(--panel);
+      background: var(--surface-grad);
       backdrop-filter: blur(16px);
       border: 1px solid var(--border);
       border-radius: var(--radius-xl);
@@ -336,7 +379,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(143, 210, 255, 0.22), transparent 70%);
+      background: radial-gradient(circle, rgba(155, 189, 235, 0.16), transparent 70%);
       pointer-events: none;
     }
 
@@ -371,12 +414,45 @@
       min-height: 34px;
       padding: 0 14px;
       border-radius: 999px;
-      background: rgba(59, 109, 246, 0.08);
+      background: linear-gradient(135deg, rgba(241, 246, 253, 0.98), rgba(230, 238, 249, 0.96));
       color: var(--accent);
       font-weight: 700;
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+    }
+
+    .brand-copy strong,
+    .topbar-copy strong,
+    .section-head h2,
+    .dashboard-copy h1,
+    .dashboard-metric strong,
+    .dashboard-overview-head h3,
+    .dashboard-side-stat strong,
+    .metric-card strong,
+    .hero-panel h3,
+    .timeline-body h3,
+    .timeline-meta strong,
+    .system-title h3,
+    .project-card h3,
+    .education-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .nav-link,
+    .btn,
+    .btn-secondary,
+    .icon-button,
+    .eyebrow,
+    .dashboard-overview-head span,
+    .mini-badge,
+    .project-tags span,
+    .skill-pill,
+    .education-card .period,
+    .field span {
+      font-weight: 600;
     }
 
     .hero-grid,
@@ -401,8 +477,8 @@
       gap: 0;
       border-radius: var(--radius-xl);
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(245, 249, 255, 0.92));
-      border: 1px solid rgba(116, 153, 230, 0.18);
+      background: var(--surface-grad-hero);
+      border: 1px solid rgba(121, 140, 176, 0.16);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
     }
 
@@ -439,8 +515,9 @@
       min-height: 360px;
       overflow: hidden;
       background:
-        radial-gradient(circle at 58% 18%, rgba(120, 167, 255, 0.22), transparent 28%),
-        linear-gradient(145deg, rgba(237, 244, 255, 0.84), rgba(232, 241, 255, 0.66));
+        radial-gradient(circle at 58% 18%, rgba(122, 158, 223, 0.18), transparent 28%),
+        radial-gradient(circle at 82% 52%, rgba(188, 209, 241, 0.16), transparent 34%),
+        linear-gradient(145deg, rgba(242, 246, 252, 0.94), rgba(229, 236, 246, 0.88));
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
@@ -453,7 +530,7 @@
       width: 280px;
       height: 280px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(115, 162, 255, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(126, 158, 220, 0.16), transparent 70%);
       filter: blur(10px);
     }
 
@@ -518,15 +595,15 @@
       margin-top: 18px;
       border-radius: 22px;
       overflow: hidden;
-      border: 1px solid rgba(127, 156, 216, 0.16);
-      background: rgba(255, 255, 255, 0.84);
-      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.08);
+      border: 1px solid rgba(121, 140, 176, 0.14);
+      background: var(--surface-grad-soft);
+      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.07);
     }
 
     .dashboard-metric {
       padding: 22px 18px;
       text-align: center;
-      border-right: 1px solid rgba(127, 156, 216, 0.12);
+      border-right: 1px solid rgba(121, 140, 176, 0.1);
     }
 
     .dashboard-metric:last-child {
@@ -552,14 +629,25 @@
 
     .dashboard-overview {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 220px;
       gap: 18px;
       margin-top: 18px;
-      padding: 22px;
+      padding: 24px;
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(127, 156, 216, 0.16);
-      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.08);
+      background: var(--surface-grad-soft);
+      border: 1px solid rgba(121, 140, 176, 0.14);
+      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.07);
+    }
+
+    .dashboard-overview-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(250px, 0.55fr);
+      align-items: stretch;
+      gap: 24px;
+    }
+
+    .dashboard-overview-main {
+      display: grid;
+      min-height: 100%;
     }
 
     .dashboard-overview-head {
@@ -567,7 +655,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      margin-bottom: 16px;
     }
 
     .dashboard-overview-head h3 {
@@ -581,8 +668,8 @@
       display: inline-flex;
       align-items: center;
       border-radius: 12px;
-      background: #f5f9ff;
-      border: 1px solid rgba(127, 156, 216, 0.16);
+      background: linear-gradient(180deg, rgba(250, 252, 255, 0.96), rgba(237, 242, 250, 0.92));
+      border: 1px solid rgba(121, 140, 176, 0.14);
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
@@ -590,9 +677,22 @@
 
     .dashboard-overview-side {
       display: grid;
-      gap: 16px;
-      align-content: start;
-      padding-top: 44px;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      height: 248px;
+      align-self: stretch;
+    }
+
+    .dashboard-side-stat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 0;
+      padding: 14px 16px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(121, 140, 176, 0.14);
+      background: linear-gradient(180deg, rgba(252, 253, 255, 0.98), rgba(238, 244, 251, 0.92));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.56);
     }
 
     .dashboard-side-stat strong {
@@ -600,7 +700,7 @@
       font-family: "Sora", sans-serif;
       font-size: 30px;
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       color: var(--text);
       letter-spacing: -0.04em;
     }
@@ -608,8 +708,8 @@
     .dashboard-side-stat span {
       display: block;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .hero-copy {
@@ -690,9 +790,9 @@
     .contact-card {
       padding: 22px;
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.82);
+      background: var(--surface-grad);
       border: 1px solid var(--border);
-      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.08);
+      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.07);
       min-width: 0;
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
     }
@@ -894,9 +994,9 @@
     .timeline-item {
       position: relative;
       display: grid;
-      grid-template-columns: 20px minmax(0, 1fr) 180px;
+      grid-template-columns: 20px minmax(0, 1fr) minmax(220px, 0.34fr);
       gap: 18px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .timeline-item::before {
@@ -926,9 +1026,9 @@
     .timeline-body {
       padding: 22px;
       border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.84);
+      background: var(--surface-grad);
       border: 1px solid var(--border);
-      box-shadow: 0 16px 30px rgba(30, 61, 116, 0.08);
+      box-shadow: 0 16px 30px rgba(30, 61, 116, 0.07);
     }
 
     .timeline-body h3 {
@@ -983,17 +1083,26 @@
     }
 
     .timeline-meta {
-      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      align-self: stretch;
+      padding: 22px;
       border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, #f9fbff, #edf5ff);
+      background: var(--surface-grad-accent);
       border: 1px solid var(--border);
+    }
+
+    .timeline-meta-block {
+      display: grid;
+      gap: 6px;
     }
 
     .timeline-meta strong {
       display: block;
       font-family: "Sora", sans-serif;
       font-size: 24px;
-      margin-bottom: 6px;
     }
 
     .timeline-meta span {
@@ -1101,7 +1210,7 @@
 
     .line-chart {
       position: relative;
-      height: 200px;
+      height: 248px;
       border-radius: 22px;
       border: 1px solid var(--border);
       background:
@@ -1549,6 +1658,42 @@
       transform: translateY(-2px);
     }
 
+    .brand-copy strong,
+    .topbar-copy strong,
+    .section-head h2,
+    .dashboard-copy h1,
+    .dashboard-metric strong,
+    .dashboard-overview-head h3,
+    .dashboard-side-stat strong,
+    .metric-card strong,
+    .hero-panel h3,
+    .timeline-body h3,
+    .timeline-meta strong,
+    .system-title h3,
+    .project-card h3,
+    .education-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .dashboard-copy h1,
+    .section-head h2 {
+      font-weight: 700;
+    }
+
+    .nav-link,
+    .eyebrow,
+    .field span,
+    .contact-item strong,
+    .education-card .period,
+    .project-tags span,
+    .skill-pill,
+    .mini-badge,
+    .dashboard-overview-head span {
+      font-weight: 600;
+    }
+
     .lightbox {
       position: fixed;
       inset: 0;
@@ -1616,13 +1761,17 @@
       }
 
       .dashboard-overview {
+        padding: 22px;
+      }
+
+      .dashboard-overview-body {
         grid-template-columns: 1fr;
       }
 
       .dashboard-overview-side {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        padding-top: 0;
+        grid-template-rows: none;
       }
     }
 
@@ -1716,6 +1865,18 @@
 
       .dashboard-overview {
         padding: 18px;
+      }
+
+      .dashboard-overview-body {
+        gap: 18px;
+      }
+
+      .dashboard-overview-side {
+        height: auto;
+      }
+
+      .dashboard-side-stat {
+        padding: 16px;
       }
 
       .dashboard-overview-head {
@@ -1836,6 +1997,10 @@
           <span>Profil profesional yang menampilkan pengalaman kerja, sistem yang ditangani, dan project unggulan.</span>
         </div>
         <div class="topbar-actions">
+          <div class="lang-switch" role="group" aria-label="Language switch">
+            <button class="lang-btn is-active" type="button" data-lang-switch="id">ID</button>
+            <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+          </div>
           <a class="btn-secondary" href="https://github.com/Adzipurnomo18" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
           <a class="btn" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
         </div>
@@ -1935,48 +2100,51 @@
               <span>Portfolio Domains</span>
             </div>
             <div class="dashboard-metric">
-              <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+              <strong class="count-up" data-target="7" data-suffix-id=" Bulan" data-suffix-en=" Months">7 Bulan</strong>
               <span>Current Role Duration</span>
             </div>
           </div>
 
           <div class="dashboard-overview">
-            <div>
-              <div class="dashboard-overview-head">
-                <h3>Professional Capability Overview</h3>
-                <span>This Year</span>
-              </div>
-              <div class="line-chart" aria-label="Professional capability overview">
-                <svg viewBox="0 0 1000 220" preserveAspectRatio="none" role="img" aria-hidden="true">
-                  <polyline fill="none" stroke="#3b6df6" stroke-width="4" points="40,92 120,98 200,94 280,102 360,100 440,102 520,86 600,90 680,84 760,88 840,82 930,78" />
-                  <polyline fill="none" stroke="#56b5ff" stroke-width="4" points="40,136 120,152 200,124 280,122 360,138 440,128 520,140 600,138 680,118 760,122 840,140 930,146" />
-                  <polyline fill="none" stroke="#68d8c2" stroke-width="4" points="40,172 120,178 200,168 280,174 360,176 440,178 520,176 600,180 680,172 760,170 840,176 930,174" />
-                  <circle cx="930" cy="78" r="6" fill="#3b6df6"></circle>
-                  <circle cx="930" cy="146" r="6" fill="#56b5ff"></circle>
-                  <circle cx="930" cy="174" r="6" fill="#68d8c2"></circle>
-                </svg>
-                <div class="line-chart-labels">
-                  <span>Support</span>
-                  <span>Analysis</span>
-                  <span>Systems</span>
-                  <span>Delivery</span>
-                  <span>Growth</span>
-                </div>
-              </div>
+            <div class="dashboard-overview-head">
+              <h3>Professional Capability Overview</h3>
+              <span>This Year</span>
             </div>
 
-            <div class="dashboard-overview-side">
-              <div class="dashboard-side-stat">
-                <strong class="count-up" data-target="2">2</strong>
-                <span>Core systems actively handled in the current role.</span>
+            <div class="dashboard-overview-body">
+              <div class="dashboard-overview-main">
+                <div class="line-chart" aria-label="Professional capability overview">
+                  <svg viewBox="0 0 1000 220" preserveAspectRatio="none" role="img" aria-hidden="true">
+                    <polyline fill="none" stroke="#3b6df6" stroke-width="4" points="40,92 120,98 200,94 280,102 360,100 440,102 520,86 600,90 680,84 760,88 840,82 930,78" />
+                    <polyline fill="none" stroke="#56b5ff" stroke-width="4" points="40,136 120,152 200,124 280,122 360,138 440,128 520,140 600,138 680,118 760,122 840,140 930,146" />
+                    <polyline fill="none" stroke="#68d8c2" stroke-width="4" points="40,172 120,178 200,168 280,174 360,176 440,178 520,176 600,180 680,172 760,170 840,176 930,174" />
+                    <circle cx="930" cy="78" r="6" fill="#3b6df6"></circle>
+                    <circle cx="930" cy="146" r="6" fill="#56b5ff"></circle>
+                    <circle cx="930" cy="174" r="6" fill="#68d8c2"></circle>
+                  </svg>
+                  <div class="line-chart-labels">
+                    <span>Support</span>
+                    <span>Analysis</span>
+                    <span>Systems</span>
+                    <span>Delivery</span>
+                    <span>Growth</span>
+                  </div>
+                </div>
               </div>
-              <div class="dashboard-side-stat">
-                <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
-                <span>Current duration supporting operational applications.</span>
-              </div>
-              <div class="dashboard-side-stat">
-                <strong class="count-up" data-target="9">9</strong>
-                <span>Technical areas consistently represented across work and portfolio.</span>
+
+              <div class="dashboard-overview-side">
+                <div class="dashboard-side-stat">
+                  <strong class="count-up" data-target="2">2</strong>
+                  <span>Core systems actively handled in the current role.</span>
+                </div>
+                <div class="dashboard-side-stat">
+                  <strong class="count-up" data-target="7" data-suffix-id=" Bulan" data-suffix-en=" Months">7 Bulan</strong>
+                  <span>Current duration supporting operational applications.</span>
+                </div>
+                <div class="dashboard-side-stat">
+                  <strong class="count-up" data-target="9">9</strong>
+                  <span>Technical areas consistently represented across work and portfolio.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -2005,10 +2173,14 @@
                 </ul>
               </div>
               <div class="timeline-meta">
-                <strong class="count-up" data-target="2">2</strong>
-                <span>Core systems handled</span>
-                <strong class="count-up" data-target="7" data-suffix=" mo" style="margin-top:16px;">7 mo</strong>
-                <span>Durasi aktif saat ini</span>
+                <div class="timeline-meta-block">
+                  <strong class="count-up" data-target="2">2</strong>
+                  <span>Core systems handled</span>
+                </div>
+                <div class="timeline-meta-block">
+                  <strong class="count-up" data-target="7" data-suffix-id=" Bulan" data-suffix-en=" Months">7 Bulan</strong>
+                  <span>Durasi aktif saat ini</span>
+                </div>
               </div>
             </div>
 
@@ -2024,8 +2196,10 @@
                 </ul>
               </div>
               <div class="timeline-meta">
-                <strong class="count-up" data-target="8" data-suffix="+">8+</strong>
-                <span>Years experience</span>
+                <div class="timeline-meta-block">
+                  <strong class="count-up" data-target="8" data-suffix="+">8+</strong>
+                  <span>Years experience</span>
+                </div>
               </div>
             </div>
           </div>
@@ -2046,7 +2220,7 @@
               <span>Core systems yang ditangani pada role saat ini.</span>
             </div>
             <div class="metric-card">
-              <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+              <strong class="count-up" data-target="7" data-suffix-id=" Bulan" data-suffix-en=" Months">7 Bulan</strong>
               <span>Durasi aktif menangani sistem operasional saat ini.</span>
             </div>
             <div class="metric-card">
@@ -2078,7 +2252,7 @@
                   <span>Bagian dari dua sistem inti yang saat ini ditangani.</span>
                 </div>
                 <div class="system-kpi">
-                  <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+                  <strong class="count-up" data-target="7" data-suffix-id=" Bulan" data-suffix-en=" Months">7 Bulan</strong>
                   <span>Periode dukungan aktif dalam role saat ini.</span>
                 </div>
                 <div class="system-kpi">
@@ -2112,7 +2286,7 @@
                   <span>Bagian dari dua sistem inti yang saat ini ditangani.</span>
                 </div>
                 <div class="system-kpi">
-                  <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+                  <strong class="count-up" data-target="7" data-suffix-id=" Bulan" data-suffix-en=" Months">7 Bulan</strong>
                   <span>Periode dukungan aktif dalam role saat ini.</span>
                 </div>
                 <div class="system-kpi">
@@ -2403,6 +2577,8 @@
     (function () {
       var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var whatsappNumber = "6282281388718";
+      var languageButtons = Array.prototype.slice.call(document.querySelectorAll("[data-lang-switch]"));
+      var currentLang = localStorage.getItem("cv_lang") || "id";
       var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
       var anchorLinks = Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]'));
       var sections = navLinks
@@ -2412,6 +2588,349 @@
         })
         .filter(Boolean);
       var topbar = document.querySelector(".topbar");
+      var translations = {
+        id: {
+          title: "Adzi Purnomo | Dashboard CV",
+          ops: [
+            { selector: ".brand-copy span", text: "IT Programmer / System Support" },
+            { selector: '.nav-link[href="#dashboard"] span', text: "Dashboard" },
+            { selector: '.nav-link[href="#experience"] span', text: "Pengalaman" },
+            { selector: '.nav-link[href="#systems"] span', text: "Sistem" },
+            { selector: '.nav-link[href="#projects"] span', text: "Proyek" },
+            { selector: '.nav-link[href="#skills"] span', text: "Keahlian" },
+            { selector: '.nav-link[href="#education"] span', text: "Pendidikan" },
+            { selector: '.nav-link[href="#contact"] span', text: "Kontak" },
+            { selector: ".sidebar-note strong", text: "Ringkasan Profesional" },
+            { selector: ".sidebar-note p", text: "IT Programmer dan System Support yang fokus pada operasional aplikasi, troubleshooting, dan pengembangan web." },
+            { selector: "#scrollTopBtn", html: '<i class="fa-solid fa-arrow-up"></i> Atas' },
+            { selector: ".topbar-copy strong", text: "Dashboard CV" },
+            { selector: ".topbar-copy span", text: "Profil profesional yang menampilkan pengalaman kerja, sistem yang ditangani, dan proyek unggulan." },
+            { selector: '.topbar-actions .btn[href="#contact"]', html: '<i class="fa-solid fa-paper-plane"></i> Hubungi Saya' },
+            { selector: "#dashboard .dashboard-copy p", text: "IT Programmer yang berfokus pada pengembangan, pemeliharaan, dan dukungan sistem bisnis operasional. Saat ini menangani aplikasi POS dan Mitrasoft HRD di PT Surya Pratama Keramindo dengan pendekatan kerja yang menekankan stabilitas, analisis masalah, dan efektivitas proses user internal." },
+            { selector: '.dashboard-actions .btn[href="#projects"]', html: '<i class="fa-solid fa-folder-open"></i> Lihat Proyek' },
+            { selector: '.dashboard-actions .btn-secondary[href="#contact"]', html: '<i class="fa-solid fa-paper-plane"></i> Hubungi Saya' },
+            { selector: "#dashboard .dashboard-metric:nth-child(1) span", text: "Tahun Pengalaman" },
+            { selector: "#dashboard .dashboard-metric:nth-child(2) span", text: "Sistem Inti" },
+            { selector: "#dashboard .dashboard-metric:nth-child(3) span", text: "Domain Portofolio" },
+            { selector: "#dashboard .dashboard-metric:nth-child(4) span", text: "Durasi Peran Saat Ini" },
+            { selector: ".dashboard-overview-head h3", text: "Gambaran Kapabilitas Profesional" },
+            { selector: ".dashboard-overview-head span", text: "Tahun Ini" },
+            { selector: ".line-chart-labels span:nth-child(1)", text: "Dukungan" },
+            { selector: ".line-chart-labels span:nth-child(2)", text: "Analisis" },
+            { selector: ".line-chart-labels span:nth-child(3)", text: "Sistem" },
+            { selector: ".line-chart-labels span:nth-child(4)", text: "Pengiriman" },
+            { selector: ".line-chart-labels span:nth-child(5)", text: "Perkembangan" },
+            { selector: ".dashboard-overview-side .dashboard-side-stat:nth-child(1) span", text: "Sistem inti yang aktif ditangani pada peran saat ini." },
+            { selector: ".dashboard-overview-side .dashboard-side-stat:nth-child(2) span", text: "Durasi saat ini dalam mendukung aplikasi operasional." },
+            { selector: ".dashboard-overview-side .dashboard-side-stat:nth-child(3) span", text: "Area teknis yang konsisten tercermin di pekerjaan dan portofolio." },
+            { selector: '#experience .eyebrow', text: "Pengalaman" },
+            { selector: '#experience .section-head h2', text: "Perjalanan kerja yang relevan" },
+            { selector: '#experience .section-head p', text: "Pengalaman profesional yang membentuk kekuatan di bidang troubleshooting, penanganan sistem, dukungan operasional, dan pengembangan aplikasi berbasis web." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-role', text: "Staff IT Programmer - 2025 - Sekarang" },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(1)', text: "Menangani aplikasi POS untuk kebutuhan transaksi dan operasional harian agar alur kerja tetap berjalan stabil." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(2)', text: "Mendukung penggunaan Mitrasoft HRD pada proses internal, termasuk penanganan kendala aplikasi dan verifikasi alur data." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(3)', text: "Melakukan troubleshooting, analisis masalah berulang, serta koordinasi tindak lanjut teknis pada sistem yang dipakai user internal." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(4)', text: "Menghubungkan kebutuhan operasional dengan solusi teknis yang realistis, bukan sekadar tampilan antarmuka." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-meta-block:nth-child(1) span', text: "Sistem inti yang ditangani" },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-meta-block:nth-child(2) span', text: "Durasi aktif saat ini" },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-role', text: "Teknisi Elektronik Konsumen - 2017 - 2025" },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-list li:nth-child(1)', text: "Melakukan diagnosa dan perbaikan perangkat elektronik konsumen dengan pendekatan troubleshooting yang sistematis." },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-list li:nth-child(2)', text: "Menghadapi kasus teknis lapangan, edukasi pengguna, dan penanganan masalah berbasis analisis gejala serta akar masalah." },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-list li:nth-child(3)', text: "Pengalaman ini memperkuat kemampuan problem solving, ketelitian teknis, dan konsistensi layanan." },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-meta-block span', text: "Tahun pengalaman" },
+            { selector: '#systems .eyebrow', text: "Sistem" },
+            { selector: '#systems .section-head h2', text: "Sistem yang sedang ditangani" },
+            { selector: '#systems .section-head p', text: "Ringkasan area sistem yang saat ini ditangani dalam operasional perusahaan, mencakup dukungan aplikasi, analisis kendala, dan koordinasi kebutuhan user." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(1) span', text: "Sistem inti yang ditangani pada peran saat ini." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(2) span', text: "Durasi aktif menangani sistem operasional saat ini." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(3) span', text: "Tahun fondasi teknis yang menopang problem solving sistem." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(4) span', text: "Domain portofolio yang mendukung perspektif penanganan sistem." },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-title p', text: "Sistem operasional untuk transaksi dan proses harian." },
+            { selector: '#systems .surface-card:nth-of-type(1) .mini-badge', text: "Saat Ini" },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-kpi:nth-child(1) span', text: "Bagian dari dua sistem inti yang saat ini ditangani." },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-kpi:nth-child(2) span', text: "Periode dukungan aktif dalam peran saat ini." },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-kpi:nth-child(3) span', text: "Basis pengalaman teknis untuk troubleshooting." },
+            { selector: '#systems .surface-card:nth-of-type(1) .clean-list li:nth-child(1)', text: "Membantu identifikasi error operasional dan memastikan kendala tidak berhenti di laporan verbal saja." },
+            { selector: '#systems .surface-card:nth-of-type(1) .clean-list li:nth-child(2)', text: "Memeriksa alur penggunaan sistem dari sisi transaksi, input data, dan masalah yang berdampak ke workflow harian." },
+            { selector: '#systems .surface-card:nth-of-type(1) .clean-list li:nth-child(3)', text: "Menjaga komunikasi antara kebutuhan user dan tindakan teknis agar penyelesaian masalah lebih cepat dan jelas." },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-title p', text: "Sistem HR internal untuk data dan proses karyawan." },
+            { selector: '#systems .surface-card:nth-of-type(2) .mini-badge', text: "Saat Ini" },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-kpi:nth-child(1) span', text: "Bagian dari dua sistem inti yang saat ini ditangani." },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-kpi:nth-child(2) span', text: "Periode dukungan aktif dalam peran saat ini." },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-kpi:nth-child(3) span', text: "Basis pengalaman teknis untuk analisis issue." },
+            { selector: '#systems .surface-card:nth-of-type(2) .clean-list li:nth-child(1)', text: "Menangani kendala penggunaan aplikasi HRD dari sisi praktik lapangan dan kebutuhan user." },
+            { selector: '#systems .surface-card:nth-of-type(2) .clean-list li:nth-child(2)', text: "Membantu pengecekan masalah terkait data, proses, atau langkah penggunaan yang menghambat pekerjaan internal." },
+            { selector: '#systems .surface-card:nth-of-type(2) .clean-list li:nth-child(3)', text: "Mengandalkan kombinasi analisis teknis dan komunikasi operasional agar perbaikan tidak salah sasaran." },
+            { selector: '#systems > .surface-card .section-head h2', text: "Arah kemampuan saat ini" },
+            { selector: '#systems > .surface-card .section-head p', text: "Kombinasi web development, troubleshooting, data flow awareness, dan operational support membentuk profil kerja yang adaptif untuk kebutuhan sistem internal." },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(1)', text: "Dukungan" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(2)', text: "Troubleshooting" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(3)', text: "Alur Data" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(4)', text: "Web Dev" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(5)', text: "Kombinasi Saat Ini" },
+            { selector: '#projects .eyebrow', text: "Proyek" },
+            { selector: '#projects .section-head h2', text: "Proyek dari source yang sekarang" },
+            { selector: '#projects .section-head p', text: "Tiga proyek berikut mewakili pendekatan pada desain antarmuka, alur layanan, dan presentasi data yang pernah dikerjakan." },
+            { selector: '#projects .project-card:nth-child(1) p', text: "Landing page jasa pembuatan website dengan pendekatan modern, toggle bilingual, dark mode, dan presentasi layanan yang diarahkan ke konversi." },
+            { selector: '#projects .project-card:nth-child(2) p', text: "Interface layanan service yang menonjolkan katalog hasil pengerjaan, CTA komunikasi, dan struktur informasi yang cepat dipahami user." },
+            { selector: '#projects .project-card:nth-child(3) p', text: "Platform arsip dan dokumentasi angkatan Teknik Informatika UNH dengan struktur publik, mode bilingual, dan penekanan pada data kolektif." },
+            { selector: '#skills .eyebrow', text: "Keahlian" },
+            { selector: '#skills .section-head h2', text: "Keahlian yang lebih sinkron dengan posisi sekarang" },
+            { selector: '#skills .section-head p', text: "Keahlian utama mencakup pengembangan web, analisis masalah teknis, penanganan aplikasi operasional, serta dukungan sistem untuk kebutuhan user internal." },
+            { selector: '#skills .skill-row:nth-child(1) .skill-meta span:first-child', text: "HTML / CSS / Implementasi UI" },
+            { selector: '#skills .skill-row:nth-child(1) .skill-meta span:last-child', text: "Inti" },
+            { selector: '#skills .skill-row:nth-child(2) .skill-meta span:last-child', text: "Inti" },
+            { selector: '#skills .skill-row:nth-child(3) .skill-meta span:last-child', text: "Inti" },
+            { selector: '#skills .skill-row:nth-child(4) .skill-meta span:first-child', text: "MySQL / Pengelolaan Data SQL" },
+            { selector: '#skills .skill-row:nth-child(4) .skill-meta span:last-child', text: "Aktif" },
+            { selector: '#skills .skill-row:nth-child(5) .skill-meta span:first-child', text: "Troubleshooting Sistem" },
+            { selector: '#skills .skill-row:nth-child(5) .skill-meta span:last-child', text: "Inti" },
+            { selector: '#skills .skill-row:nth-child(6) .skill-meta span:first-child', text: "Dukungan Aplikasi Operasional" },
+            { selector: '#skills .skill-row:nth-child(6) .skill-meta span:last-child', text: "Inti" },
+            { selector: '#skills .focus-card:nth-child(1) strong', text: "Pemahaman Operasional" },
+            { selector: '#skills .focus-card:nth-child(1) p', text: "Memahami alur kerja aplikasi operasional, mengidentifikasi kendala penggunaan, dan menyesuaikan solusi dengan kebutuhan lapangan." },
+            { selector: '#skills .focus-card:nth-child(2) strong', text: "Troubleshooting Teknis" },
+            { selector: '#skills .focus-card:nth-child(2) p', text: "Mampu menganalisis akar masalah, menelusuri penyebab error, dan mengarahkan tindak lanjut teknis secara sistematis." },
+            { selector: '#skills .focus-card:nth-child(3) strong', text: "Mindset Dukungan Sistem" },
+            { selector: '#skills .focus-card:nth-child(3) p', text: "Menggabungkan kemampuan programming dengan pendekatan support yang berorientasi stabilitas sistem, kejelasan proses, dan efektivitas kerja user." },
+            { selector: '#education .eyebrow', text: "Pendidikan" },
+            { selector: '#education .section-head h2', text: "Latar belakang pendidikan" },
+            { selector: '#education .section-head p', text: "Pendidikan formal yang mendukung dasar pemrograman, analisis sistem, IoT, dan troubleshooting teknis." },
+            { selector: '#education .education-card:nth-child(1) h3', html: 'Sarjana Teknik Informatika<br>Universitas Nurdin Hamzah Jambi' },
+            { selector: '#education .education-card:nth-child(1) p', html: '<strong>IPK:</strong> 3.78 / 4.00' },
+            { selector: '#education .education-card:nth-child(1) .clean-list li:nth-child(1)', text: "Fokus pembelajaran pada software development, analisis data, IoT, dan sistem informasi." },
+            { selector: '#education .education-card:nth-child(1) .clean-list li:nth-child(2)', text: "Skripsi: Prototype Sistem Smart Garden Berbasis IoT." },
+            { selector: '#education .education-card:nth-child(2) h3', html: 'SMK Negeri 1 Natar Lampung Selatan<br>Teknik Elektronika Industri' },
+            { selector: '#education .education-card:nth-child(2) p', text: "Fondasi awal di bidang elektronika industri dan sistem kendali yang kemudian memperkuat cara berpikir troubleshooting sampai sekarang." },
+            { selector: '#contact .eyebrow', text: "Kontak" },
+            { selector: '#contact .section-head h2', text: "Kontak dan koneksi profesional" },
+            { selector: '#contact .section-head p', text: "Terbuka untuk diskusi profesional, kolaborasi proyek, dan peluang kerja di bidang IT, system support, maupun pengembangan aplikasi." },
+            { selector: '#contact .contact-card:nth-child(1) > p', text: "Silakan hubungi melalui email atau profil profesional berikut untuk komunikasi lebih lanjut." },
+            { selector: '#contactForm .field-row .field:nth-child(1) span', text: "Nama" },
+            { selector: '#contactForm .field-row .field:nth-child(2) span', text: "Email" },
+            { selector: '#contactForm > .field:nth-child(2) span', text: "Subjek" },
+            { selector: '#contactForm > .field:nth-child(3) span', text: "Pesan" },
+            { selector: '#contactForm button[type="submit"]', html: '<i class="fa-solid fa-paper-plane"></i> Kirim ke WhatsApp' },
+            { selector: ".footer-note > span", text: "© 2026 Adzi Purnomo. Hak cipta dilindungi." }
+          ],
+          placeholders: [
+            { selector: 'input[name="name"]', value: "Nama Anda" },
+            { selector: 'input[name="email"]', value: "email@domain.com" },
+            { selector: 'input[name="subject"]', value: "Tujuan kontak" },
+            { selector: 'textarea[name="message"]', value: "Tulis pesan Anda di sini..." }
+          ],
+          attrs: [
+            { selector: ".lang-switch", name: "aria-label", value: "Pilih bahasa" },
+            { selector: "nav.nav-group", name: "aria-label", value: "Navigasi Bagian" },
+            { selector: "#lightboxClose", name: "aria-label", value: "Tutup pratinjau" }
+          ],
+          whatsapp: {
+            intro: "Halo Adzi, saya ingin menghubungi Anda melalui website CV.",
+            name: "Nama",
+            email: "Email",
+            subject: "Subjek",
+            message: "Pesan"
+          }
+        },
+        en: {
+          title: "Adzi Purnomo | CV Dashboard",
+          ops: [
+            { selector: ".brand-copy span", text: "IT Programmer / System Support" },
+            { selector: '.nav-link[href="#dashboard"] span', text: "Dashboard" },
+            { selector: '.nav-link[href="#experience"] span', text: "Experience" },
+            { selector: '.nav-link[href="#systems"] span', text: "Systems" },
+            { selector: '.nav-link[href="#projects"] span', text: "Projects" },
+            { selector: '.nav-link[href="#skills"] span', text: "Skills" },
+            { selector: '.nav-link[href="#education"] span', text: "Education" },
+            { selector: '.nav-link[href="#contact"] span', text: "Contact" },
+            { selector: ".sidebar-note strong", text: "Professional Summary" },
+            { selector: ".sidebar-note p", text: "IT Programmer and System Support focused on application operations, troubleshooting, and web development." },
+            { selector: "#scrollTopBtn", html: '<i class="fa-solid fa-arrow-up"></i> Top' },
+            { selector: ".topbar-copy strong", text: "CV Dashboard" },
+            { selector: ".topbar-copy span", text: "A professional profile highlighting work experience, managed systems, and selected projects." },
+            { selector: '.topbar-actions .btn[href="#contact"]', html: '<i class="fa-solid fa-paper-plane"></i> Contact Me' },
+            { selector: "#dashboard .dashboard-copy p", text: "An IT Programmer focused on building, maintaining, and supporting operational business systems. Currently handling POS and Mitrasoft HRD applications at PT Surya Pratama Keramindo with a work approach centered on stability, issue analysis, and internal user process effectiveness." },
+            { selector: '.dashboard-actions .btn[href="#projects"]', html: '<i class="fa-solid fa-folder-open"></i> View Projects' },
+            { selector: '.dashboard-actions .btn-secondary[href="#contact"]', html: '<i class="fa-solid fa-paper-plane"></i> Contact Me' },
+            { selector: "#dashboard .dashboard-metric:nth-child(1) span", text: "Years of Experience" },
+            { selector: "#dashboard .dashboard-metric:nth-child(2) span", text: "Core Systems" },
+            { selector: "#dashboard .dashboard-metric:nth-child(3) span", text: "Portfolio Domains" },
+            { selector: "#dashboard .dashboard-metric:nth-child(4) span", text: "Current Role Duration" },
+            { selector: ".dashboard-overview-head h3", text: "Professional Capability Overview" },
+            { selector: ".dashboard-overview-head span", text: "This Year" },
+            { selector: ".line-chart-labels span:nth-child(1)", text: "Support" },
+            { selector: ".line-chart-labels span:nth-child(2)", text: "Analysis" },
+            { selector: ".line-chart-labels span:nth-child(3)", text: "Systems" },
+            { selector: ".line-chart-labels span:nth-child(4)", text: "Delivery" },
+            { selector: ".line-chart-labels span:nth-child(5)", text: "Growth" },
+            { selector: ".dashboard-overview-side .dashboard-side-stat:nth-child(1) span", text: "Core systems actively handled in the current role." },
+            { selector: ".dashboard-overview-side .dashboard-side-stat:nth-child(2) span", text: "Current duration supporting operational applications." },
+            { selector: ".dashboard-overview-side .dashboard-side-stat:nth-child(3) span", text: "Technical areas consistently represented across work and portfolio." },
+            { selector: '#experience .eyebrow', text: "Experience" },
+            { selector: '#experience .section-head h2', text: "Relevant Professional Journey" },
+            { selector: '#experience .section-head p', text: "Professional experience that shaped strengths in troubleshooting, system handling, operational support, and web-based application development." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-role', text: "Staff IT Programmer - 2025 - Present" },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(1)', text: "Handling POS applications for transaction needs and daily operations so workflows remain stable." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(2)', text: "Supporting Mitrasoft HRD usage in internal processes, including application issue handling and data flow verification." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(3)', text: "Performing troubleshooting, recurring issue analysis, and follow-up technical coordination for systems used by internal users." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-list li:nth-child(4)', text: "Connecting operational needs with realistic technical solutions, not just interface presentation." },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-meta-block:nth-child(1) span', text: "Core systems handled" },
+            { selector: '#experience .timeline-item:nth-child(1) .timeline-meta-block:nth-child(2) span', text: "Current active duration" },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-role', text: "Consumer Electronics Technician - 2017 - 2025" },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-list li:nth-child(1)', text: "Diagnosed and repaired consumer electronic devices using a systematic troubleshooting approach." },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-list li:nth-child(2)', text: "Handled field technical cases, user education, and issue resolution based on symptom analysis and root causes." },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-list li:nth-child(3)', text: "This experience strengthened problem solving, technical accuracy, and service consistency." },
+            { selector: '#experience .timeline-item:nth-child(2) .timeline-meta-block span', text: "Years of experience" },
+            { selector: '#systems .eyebrow', text: "Systems" },
+            { selector: '#systems .section-head h2', text: "Systems Currently Handled" },
+            { selector: '#systems .section-head p', text: "A concise view of the systems currently handled in company operations, covering application support, issue analysis, and user-need coordination." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(1) span', text: "Core systems handled in the current role." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(2) span', text: "Active duration supporting current operational systems." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(3) span', text: "Technical foundation years supporting system problem solving." },
+            { selector: '#systems .grid-4 .metric-card:nth-child(4) span', text: "Portfolio domains supporting a system-handling perspective." },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-title p', text: "Operational system for transactions and daily processes." },
+            { selector: '#systems .surface-card:nth-of-type(1) .mini-badge', text: "Current" },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-kpi:nth-child(1) span', text: "One of the two core systems currently handled." },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-kpi:nth-child(2) span', text: "Active support period in the current role." },
+            { selector: '#systems .surface-card:nth-of-type(1) .system-kpi:nth-child(3) span', text: "Technical experience base for troubleshooting." },
+            { selector: '#systems .surface-card:nth-of-type(1) .clean-list li:nth-child(1)', text: "Helping identify operational errors and ensuring issues do not stop at verbal reports only." },
+            { selector: '#systems .surface-card:nth-of-type(1) .clean-list li:nth-child(2)', text: "Reviewing system usage flow from transactions, data input, and issues affecting daily workflows." },
+            { selector: '#systems .surface-card:nth-of-type(1) .clean-list li:nth-child(3)', text: "Maintaining communication between user needs and technical action so resolution is faster and clearer." },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-title p', text: "Internal HR system for employee data and processes." },
+            { selector: '#systems .surface-card:nth-of-type(2) .mini-badge', text: "Current" },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-kpi:nth-child(1) span', text: "One of the two core systems currently handled." },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-kpi:nth-child(2) span', text: "Active support period in the current role." },
+            { selector: '#systems .surface-card:nth-of-type(2) .system-kpi:nth-child(3) span', text: "Technical experience base for issue analysis." },
+            { selector: '#systems .surface-card:nth-of-type(2) .clean-list li:nth-child(1)', text: "Handling HR application issues from practical field usage and internal user needs." },
+            { selector: '#systems .surface-card:nth-of-type(2) .clean-list li:nth-child(2)', text: "Helping verify issues related to data, processes, or usage steps that block internal work." },
+            { selector: '#systems .surface-card:nth-of-type(2) .clean-list li:nth-child(3)', text: "Relying on a combination of technical analysis and operational communication so fixes stay on target." },
+            { selector: '#systems > .surface-card .section-head h2', text: "Current Capability Direction" },
+            { selector: '#systems > .surface-card .section-head p', text: "A combination of web development, troubleshooting, data flow awareness, and operational support shapes an adaptive profile for internal system needs." },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(1)', text: "Support" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(2)', text: "Troubleshooting" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(3)', text: "Data Flow" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(4)', text: "Web Dev" },
+            { selector: '#systems > .surface-card .line-chart-labels span:nth-child(5)', text: "Current Blend" },
+            { selector: '#projects .eyebrow', text: "Projects" },
+            { selector: '#projects .section-head h2', text: "Projects from the Current Source" },
+            { selector: '#projects .section-head p', text: "These three projects represent approaches to interface design, service flow, and data presentation that have been built before." },
+            { selector: '#projects .project-card:nth-child(1) p', text: "A website-service landing page with a modern approach, bilingual toggle, dark mode, and service presentation designed for conversion." },
+            { selector: '#projects .project-card:nth-child(2) p', text: "A service interface highlighting work-result catalogs, communication CTAs, and an information structure that users can grasp quickly." },
+            { selector: '#projects .project-card:nth-child(3) p', text: "An archive and documentation platform for UNH Informatics cohorts with a public structure, bilingual mode, and emphasis on collective data." },
+            { selector: '#skills .eyebrow', text: "Skills" },
+            { selector: '#skills .section-head h2', text: "Skills Better Aligned with the Current Role" },
+            { selector: '#skills .section-head p', text: "Core skills cover web development, technical issue analysis, operational application handling, and system support for internal user needs." },
+            { selector: '#skills .skill-row:nth-child(1) .skill-meta span:first-child', text: "HTML / CSS / UI Implementation" },
+            { selector: '#skills .skill-row:nth-child(1) .skill-meta span:last-child', text: "Core" },
+            { selector: '#skills .skill-row:nth-child(2) .skill-meta span:last-child', text: "Core" },
+            { selector: '#skills .skill-row:nth-child(3) .skill-meta span:last-child', text: "Core" },
+            { selector: '#skills .skill-row:nth-child(4) .skill-meta span:first-child', text: "MySQL / SQL Data Handling" },
+            { selector: '#skills .skill-row:nth-child(4) .skill-meta span:last-child', text: "Working" },
+            { selector: '#skills .skill-row:nth-child(5) .skill-meta span:first-child', text: "System Troubleshooting" },
+            { selector: '#skills .skill-row:nth-child(5) .skill-meta span:last-child', text: "Core" },
+            { selector: '#skills .skill-row:nth-child(6) .skill-meta span:first-child', text: "Operational App Support" },
+            { selector: '#skills .skill-row:nth-child(6) .skill-meta span:last-child', text: "Core" },
+            { selector: '#skills .focus-card:nth-child(1) strong', text: "Operational Understanding" },
+            { selector: '#skills .focus-card:nth-child(1) p', text: "Understanding operational application flows, identifying usage constraints, and aligning solutions with real field needs." },
+            { selector: '#skills .focus-card:nth-child(2) strong', text: "Technical Troubleshooting" },
+            { selector: '#skills .focus-card:nth-child(2) p', text: "Able to analyze root causes, trace error sources, and direct technical follow-up systematically." },
+            { selector: '#skills .focus-card:nth-child(3) strong', text: "System Support Mindset" },
+            { selector: '#skills .focus-card:nth-child(3) p', text: "Combining programming capability with a support approach oriented toward system stability, process clarity, and user effectiveness." },
+            { selector: '#education .eyebrow', text: "Education" },
+            { selector: '#education .section-head h2', text: "Educational Background" },
+            { selector: '#education .section-head p', text: "Formal education supporting programming fundamentals, system analysis, IoT, and technical troubleshooting." },
+            { selector: '#education .education-card:nth-child(1) h3', html: 'Bachelor of Informatics Engineering<br>Nurdin Hamzah University Jambi' },
+            { selector: '#education .education-card:nth-child(1) p', html: '<strong>GPA:</strong> 3.78 / 4.00' },
+            { selector: '#education .education-card:nth-child(1) .clean-list li:nth-child(1)', text: "Study focus on software development, data analysis, IoT, and information systems." },
+            { selector: '#education .education-card:nth-child(1) .clean-list li:nth-child(2)', text: "Thesis: IoT-Based Smart Garden System Prototype." },
+            { selector: '#education .education-card:nth-child(2) h3', html: 'SMK Negeri 1 Natar, South Lampung<br>Industrial Electronics Engineering' },
+            { selector: '#education .education-card:nth-child(2) p', text: "An early foundation in industrial electronics and control systems that later strengthened the troubleshooting mindset I still use today." },
+            { selector: '#contact .eyebrow', text: "Contact" },
+            { selector: '#contact .section-head h2', text: "Contact and Professional Reach" },
+            { selector: '#contact .section-head p', text: "Open to professional discussions, project collaboration, and job opportunities in IT, system support, or application development." },
+            { selector: '#contact .contact-card:nth-child(1) > p', text: "Feel free to reach out through email or the following professional profiles for further communication." },
+            { selector: '#contactForm .field-row .field:nth-child(1) span', text: "Name" },
+            { selector: '#contactForm .field-row .field:nth-child(2) span', text: "Email" },
+            { selector: '#contactForm > .field:nth-child(2) span', text: "Subject" },
+            { selector: '#contactForm > .field:nth-child(3) span', text: "Message" },
+            { selector: '#contactForm button[type="submit"]', html: '<i class="fa-solid fa-paper-plane"></i> Send to WhatsApp' },
+            { selector: ".footer-note > span", text: "© 2026 Adzi Purnomo. All rights reserved." }
+          ],
+          placeholders: [
+            { selector: 'input[name="name"]', value: "Your name" },
+            { selector: 'input[name="email"]', value: "email@domain.com" },
+            { selector: 'input[name="subject"]', value: "Contact purpose" },
+            { selector: 'textarea[name="message"]', value: "Write your message here..." }
+          ],
+          attrs: [
+            { selector: ".lang-switch", name: "aria-label", value: "Choose language" },
+            { selector: "nav.nav-group", name: "aria-label", value: "Section Navigation" },
+            { selector: "#lightboxClose", name: "aria-label", value: "Close preview" }
+          ],
+          whatsapp: {
+            intro: "Hello Adzi, I would like to contact you through your CV website.",
+            name: "Name",
+            email: "Email",
+            subject: "Subject",
+            message: "Message"
+          }
+        }
+      };
+
+      function updateCountLabels() {
+        var activeLang = document.documentElement.getAttribute("data-lang") || "id";
+        var countElements = document.querySelectorAll(".count-up");
+        countElements.forEach(function (item) {
+          var target = parseInt(item.getAttribute("data-target") || "0", 10);
+          if (isNaN(target)) {
+            return;
+          }
+          var suffix = item.getAttribute("data-suffix-" + activeLang) || item.getAttribute("data-suffix") || "";
+          item.setAttribute("data-active-suffix", suffix);
+          if (reduceMotion || item.dataset.counted === "true") {
+            item.textContent = String(target) + suffix;
+          } else {
+            item.textContent = "0" + suffix;
+          }
+        });
+      }
+
+      function applyLanguage(lang) {
+        var pack = translations[lang] || translations.id;
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.setAttribute("data-lang", lang);
+        document.title = pack.title;
+
+        pack.ops.forEach(function (entry) {
+          document.querySelectorAll(entry.selector).forEach(function (node) {
+            if (entry.html !== undefined) {
+              node.innerHTML = entry.html;
+            } else {
+              node.textContent = entry.text;
+            }
+          });
+        });
+
+        pack.placeholders.forEach(function (entry) {
+          document.querySelectorAll(entry.selector).forEach(function (node) {
+            node.setAttribute("placeholder", entry.value);
+          });
+        });
+
+        pack.attrs.forEach(function (entry) {
+          document.querySelectorAll(entry.selector).forEach(function (node) {
+            node.setAttribute(entry.name, entry.value);
+          });
+        });
+
+        languageButtons.forEach(function (button) {
+          button.classList.toggle("is-active", button.getAttribute("data-lang-switch") === lang);
+        });
+
+        updateCountLabels();
+        localStorage.setItem("cv_lang", lang);
+      }
 
       function getAnchorOffset() {
         var fallback = window.innerWidth <= 760 ? 84 : 108;
@@ -2434,6 +2953,18 @@
           behavior: reduceMotion ? "auto" : "smooth"
         });
       }
+
+      applyLanguage(currentLang);
+
+      languageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var lang = button.getAttribute("data-lang-switch");
+          if (!lang || lang === currentLang) {
+            return;
+          }
+          applyLanguage(lang);
+        });
+      });
 
       anchorLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
@@ -2533,14 +3064,15 @@
           var email = (formData.get("email") || "").toString().trim();
           var subject = (formData.get("subject") || "").toString().trim();
           var message = (formData.get("message") || "").toString().trim();
+          var whatsappPack = translations[currentLang] ? translations[currentLang].whatsapp : translations.id.whatsapp;
 
           var whatsappMessage = [
-            "Halo Adzi, saya ingin menghubungi Anda melalui website CV.",
+            whatsappPack.intro,
             "",
-            "Nama: " + name,
-            "Email: " + email,
-            "Subjek: " + subject,
-            "Pesan:",
+            whatsappPack.name + ": " + name,
+            whatsappPack.email + ": " + email,
+            whatsappPack.subject + ": " + subject,
+            whatsappPack.message + ":",
             message
           ].join("\n");
 
@@ -2559,7 +3091,7 @@
         }
 
         var target = parseInt(element.getAttribute("data-target") || "0", 10);
-        var suffix = element.getAttribute("data-suffix") || "";
+        var suffix = element.getAttribute("data-active-suffix") || "";
         if (isNaN(target)) {
           return;
         }
@@ -2603,7 +3135,7 @@
       var countItems = document.querySelectorAll(".count-up");
       countItems.forEach(function (item) {
         var target = parseInt(item.getAttribute("data-target") || "0", 10);
-        var suffix = item.getAttribute("data-suffix") || "";
+        var suffix = item.getAttribute("data-active-suffix") || "";
         if (!isNaN(target)) {
           item.textContent = reduceMotion ? formatCountValue(target, suffix) : formatCountValue(0, suffix);
         }
