@@ -3,84 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | A D Z I</title>
+  <title>Adzi Purnomo | CV Dashboard</title>
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
   <style>
     :root {
-      --bg: #05070f;
-      --bg-2: #0b1324;
-      --card: rgba(9, 15, 28, 0.82);
-      --card-border: rgba(56, 189, 248, 0.2);
-      --cyan: #38bdf8;
-      --lime: #a3e635;
-      --amber: #facc15;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --glow-1: rgba(56, 189, 248, 0.12);
-      --glow-2: rgba(250, 204, 21, 0.12);
-      --shadow: 0 20px 50px rgba(2, 6, 23, 0.55);
-    }
-
-    body[data-theme="light"] {
-      --bg: #f8fafc;
-      --bg-2: #e2e8f0;
-      --card: rgba(255, 255, 255, 0.82);
-      --card-border: rgba(56, 189, 248, 0.35);
-      --cyan: #0ea5e9;
-      --lime: #65a30d;
-      --amber: #f59e0b;
-      --text: #0f172a;
-      --muted: #475569;
-      --glow-1: rgba(14, 165, 233, 0.12);
-      --glow-2: rgba(245, 158, 11, 0.12);
-      --shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+      --bg: #f3f7ff;
+      --bg-soft: #eef4ff;
+      --panel: rgba(255, 255, 255, 0.88);
+      --panel-solid: #ffffff;
+      --border: rgba(127, 156, 216, 0.2);
+      --border-strong: rgba(74, 116, 210, 0.24);
+      --text: #16203b;
+      --muted: #62708e;
+      --accent: #3b6df6;
+      --accent-2: #6aa6ff;
+      --accent-3: #8fd2ff;
+      --chip: #edf3ff;
+      --shadow: 0 24px 60px rgba(27, 52, 102, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --sidebar-width: 252px;
+      --anchor-offset: 108px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
-    body {
-      font-family: "Space Grotesk", sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 10% 10%, var(--glow-1), transparent 60%),
-                  radial-gradient(900px 500px at 90% 20%, var(--glow-2), transparent 60%),
-                  linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg) 100%);
-      min-height: 100vh;
+    html {
       scroll-behavior: smooth;
     }
 
-    body::before {
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(111, 175, 255, 0.24), transparent 28%),
+        radial-gradient(circle at top right, rgba(59, 109, 246, 0.16), transparent 22%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+      min-height: 100vh;
+    }
+
+    body::before,
+    body::after {
       content: "";
       position: fixed;
-      inset: 0;
-      background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
-      background-size: 120px 120px;
-      opacity: 0.3;
+      inset: auto;
       pointer-events: none;
-      z-index: -1;
+      z-index: -2;
+      filter: blur(40px);
     }
 
-    body[data-theme="light"]::before {
-      background-image: radial-gradient(rgba(14, 165, 233, 0.15) 1px, transparent 1px);
-      opacity: 0.22;
+    body::before {
+      width: 320px;
+      height: 320px;
+      top: 100px;
+      right: -80px;
+      background: rgba(90, 141, 255, 0.16);
+      border-radius: 50%;
     }
 
-    body[data-theme="light"] header {
-      background: rgba(248, 250, 252, 0.88);
-      border-bottom-color: rgba(14, 165, 233, 0.2);
+    body::after {
+      width: 280px;
+      height: 280px;
+      left: -60px;
+      bottom: 60px;
+      background: rgba(143, 210, 255, 0.18);
+      border-radius: 50%;
     }
 
-    body[data-theme="light"] header a {
-      color: #1f2937;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     a {
@@ -88,1653 +89,2642 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1200px, 92vw);
-      margin: 0 auto;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
+    .app-shell {
+      display: grid;
+      grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
       gap: 28px;
-      padding: 14px 20px;
-      background: rgba(5, 10, 20, 0.7);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-      z-index: 1000;
-      transition: top 0.4s ease;
+      width: min(1520px, calc(100vw - 32px));
+      margin: 16px auto;
     }
 
-    header a {
-      font-weight: 600;
+    .sidebar {
+      position: sticky;
+      top: 16px;
+      height: calc(100vh - 32px);
+      padding: 24px 18px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 10px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(59, 109, 246, 0.12), rgba(143, 210, 255, 0.24));
+      border: 1px solid rgba(59, 109, 246, 0.16);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-copy span {
+      display: block;
       color: var(--muted);
-      letter-spacing: 0.4px;
-      transition: color 0.3s ease;
+      font-size: 12px;
+      margin-top: 2px;
     }
 
-    header a:hover {
-      color: var(--cyan);
+    .nav-group {
+      display: grid;
+      gap: 6px;
     }
 
-    .lang-toggle {
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+    }
+
+    .nav-link i {
+      width: 18px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .nav-link:hover,
+    .nav-link.is-active {
+      color: var(--accent);
+      background: linear-gradient(135deg, rgba(59, 109, 246, 0.1), rgba(143, 210, 255, 0.12));
+      transform: translateX(3px);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .sidebar-note {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f7fbff, #eef5ff);
+      border: 1px solid var(--border);
+    }
+
+    .sidebar-note strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .sidebar-note p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .sidebar-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .icon-button,
+    .btn,
+    .btn-secondary {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .icon-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 14px;
+      background: var(--panel-solid);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      box-shadow: 0 10px 24px rgba(37, 72, 135, 0.08);
+      width: 100%;
+      min-width: 0;
+      white-space: nowrap;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #ffffff;
+      box-shadow: 0 18px 34px rgba(59, 109, 246, 0.24);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .lang-toggle:hover {
+    .btn:hover,
+    .btn-secondary:hover,
+    .icon-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 22px rgba(56, 189, 248, 0.2);
     }
 
-    .theme-toggle {
+    .btn-secondary {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.7);
       color: var(--text);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 28px rgba(41, 74, 128, 0.08);
     }
 
-    .theme-toggle:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 22px rgba(56, 189, 248, 0.2);
+    .workspace {
+      display: grid;
+      gap: 22px;
+      padding-bottom: 24px;
     }
 
-    body[data-theme="light"] .lang-toggle,
-    body[data-theme="light"] .theme-toggle {
-      background: rgba(255, 255, 255, 0.8);
-      border-color: rgba(14, 165, 233, 0.35);
+    .topbar {
+      position: sticky;
+      top: 16px;
+      z-index: 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 72px;
+      padding: 18px 24px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 44px rgba(35, 65, 121, 0.1);
     }
 
-    section {
-      padding: 110px 0 80px;
+    .topbar-copy strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+
+    .topbar-copy span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .page {
+      display: grid;
+      gap: 22px;
+    }
+
+    .section-card {
+      position: relative;
+      padding: 26px;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      scroll-margin-top: var(--anchor-offset);
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -80px -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(143, 210, 255, 0.22), transparent 70%);
+      pointer-events: none;
     }
 
     .section-head {
-      text-align: center;
-      margin-bottom: 32px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
     }
 
     .section-head h2 {
-      font-family: "Orbitron", sans-serif;
-      font-size: 28px;
-      color: var(--cyan);
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(28px, 3vw, 40px);
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
     }
 
     .section-head p {
       color: var(--muted);
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .span-12 { grid-column: span 12; }
-    .span-9 { grid-column: span 9; }
-    .span-8 { grid-column: span 8; }
-    .span-7 { grid-column: span 7; }
-    .span-6 { grid-column: span 6; }
-    .span-5 { grid-column: span 5; }
-    .span-4 { grid-column: span 4; }
-    .span-3 { grid-column: span 3; }
-
-    .bento-card {
-      position: relative;
-      padding: 22px;
-      border-radius: 22px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-    }
-
-    .bento-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(250, 204, 21, 0.15));
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      pointer-events: none;
-    }
-
-    .bento-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(56, 189, 248, 0.5);
-      box-shadow: 0 30px 70px rgba(3, 7, 18, 0.6);
-    }
-
-    .bento-card:hover::before {
-      opacity: 1;
-    }
-
-    .hero-title {
-      font-family: "Orbitron", sans-serif;
-      font-size: clamp(32px, 4vw, 52px);
-      margin-bottom: 12px;
-      letter-spacing: 1.5px;
-      color: #e0f2fe;
-    }
-
-    .logo-scan {
-      width: 72px;
-      height: 72px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: rgba(7, 12, 22, 0.7);
-      box-shadow: 0 18px 32px rgba(2, 6, 23, 0.45);
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 16px;
-      animation: logoFloat 8s ease-in-out infinite;
-    }
-
-    .logo-scan img {
-      width: 70%;
-      height: 70%;
-      object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
-      z-index: 2;
-    }
-
-    .logo-scan::before,
-    .logo-scan::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .logo-scan::before {
-      background: linear-gradient(transparent 35%, rgba(56, 189, 248, 0.25) 50%, transparent 65%);
-      transform: translateY(-120%);
-      animation: scanHorizontal 7.5s ease-in-out infinite;
-    }
-
-    .logo-scan::after {
-      background: linear-gradient(90deg, transparent 35%, rgba(250, 204, 21, 0.22) 50%, transparent 65%);
-      transform: translateX(-120%);
-      animation: scanVertical 8s ease-in-out infinite;
-      animation-delay: 3.2s;
-    }
-
-    .logo-scan .scan-grid {
-      position: absolute;
-      inset: -20%;
-      background-image:
-        repeating-linear-gradient(0deg, rgba(56, 189, 248, 0.08), rgba(56, 189, 248, 0.08) 1px, transparent 1px, transparent 8px),
-        repeating-linear-gradient(90deg, rgba(56, 189, 248, 0.06), rgba(56, 189, 248, 0.06) 1px, transparent 1px, transparent 10px);
-      opacity: 0.35;
-      mix-blend-mode: screen;
-      animation: gridShift 12s linear infinite;
-    }
-
-    .logo-scan .scan-glow {
-      position: absolute;
-      inset: -40%;
-      background: conic-gradient(from 120deg, rgba(56, 189, 248, 0.14), transparent 45%, rgba(250, 204, 21, 0.14), transparent 75%);
-      opacity: 0.5;
-      animation: glowSpin 14s linear infinite;
-    }
-
-    .logo-scan .scan-flicker {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 60%);
-      opacity: 0.2;
-      animation: flicker 4.8s steps(4) infinite;
-    }
-
-    @keyframes scanHorizontal {
-      0% { transform: translateY(-120%); opacity: 0; }
-      25% { opacity: 0.6; }
-      55% { transform: translateY(120%); opacity: 0.5; }
-      100% { transform: translateY(120%); opacity: 0; }
-    }
-
-    @keyframes scanVertical {
-      0% { transform: translateX(-120%); opacity: 0; }
-      25% { opacity: 0.55; }
-      55% { transform: translateX(120%); opacity: 0.45; }
-      100% { transform: translateX(120%); opacity: 0; }
-    }
-
-    @keyframes gridShift {
-      0% { transform: translate(0, 0); }
-      50% { transform: translate(-6px, 4px); }
-      100% { transform: translate(0, 0); }
-    }
-
-    @keyframes glowSpin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 0.18; }
-      40% { opacity: 0.28; }
-      60% { opacity: 0.12; }
-    }
-
-    @keyframes logoFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-    }
-
-    body[data-theme="light"] .logo-scan {
-      background: rgba(248, 250, 252, 0.9);
-      border-color: rgba(14, 165, 233, 0.4);
-      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
-    }
-
-    body[data-theme="light"] .logo-scan img {
-      filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.35));
-    }
-
-    .hero-subtitle {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 20px;
+      max-width: 760px;
+      line-height: 1.75;
+      font-size: 15px;
     }
 
     .eyebrow {
-      color: var(--lime);
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .btn,
-    .ghost-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 22px;
-      border-radius: 14px;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(59, 109, 246, 0.08);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .btn {
-      background: linear-gradient(120deg, var(--cyan), var(--amber));
-      color: #04111f;
-      box-shadow: 0 14px 28px rgba(56, 189, 248, 0.3);
+    .hero-grid,
+    .dashboard-hero,
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
     }
 
-    .btn:hover {
-      transform: translateY(-2px) scale(1.02);
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.55fr) minmax(360px, 0.9fr);
+      align-items: stretch;
     }
 
-    .ghost-btn {
-      border-color: rgba(148, 163, 184, 0.4);
+    .dashboard-hero {
+      grid-template-columns: minmax(0, 1.18fr) minmax(360px, 0.82fr);
+      align-items: stretch;
+      gap: 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(245, 249, 255, 0.92));
+      border: 1px solid rgba(116, 153, 230, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    }
+
+    .dashboard-copy {
+      display: grid;
+      align-content: center;
+      gap: 22px;
+      padding: 18px 10px 12px 4px;
+    }
+
+    .dashboard-copy h1 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(44px, 5vw, 68px);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
+      max-width: 760px;
+    }
+
+    .dashboard-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 640px;
+    }
+
+    .dashboard-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .dashboard-visual {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 58% 18%, rgba(120, 167, 255, 0.22), transparent 28%),
+        linear-gradient(145deg, rgba(237, 244, 255, 0.84), rgba(232, 241, 255, 0.66));
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    .dashboard-visual::before {
+      content: "";
+      position: absolute;
+      inset: 10% -8% auto auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(115, 162, 255, 0.18), transparent 70%);
+      filter: blur(10px);
+    }
+
+    .dashboard-visual::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 6%;
+      bottom: 8%;
+      height: 22px;
+      background: radial-gradient(circle, rgba(90, 145, 255, 0.18), transparent 70%);
+      filter: blur(14px);
+      pointer-events: none;
+    }
+
+    .dashboard-wave-scene {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .dashboard-wave-svg {
+      position: absolute;
+      right: -8%;
+      bottom: -2%;
+      width: 118%;
+      height: 96%;
+      overflow: visible;
+      filter: drop-shadow(0 22px 22px rgba(76, 124, 233, 0.16));
+    }
+
+    .dashboard-wave-layer {
+      transform-origin: center;
+      animation: waveLayerFloat 8.5s ease-in-out infinite;
+    }
+
+    .dashboard-wave-layer.layer-mid {
+      animation-duration: 9.2s;
+      animation-delay: -1.2s;
+    }
+
+    .dashboard-wave-layer.layer-front {
+      animation-duration: 7.8s;
+      animation-delay: -0.6s;
+    }
+
+    .dashboard-wave-layer.layer-far {
+      animation-duration: 10.8s;
+      animation-delay: -1.8s;
+    }
+
+    .dashboard-wave-highlight {
+      opacity: 0.8;
+      animation: waveGlowPulse 6.8s ease-in-out infinite;
+    }
+
+    .dashboard-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 18px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(127, 156, 216, 0.16);
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.08);
+    }
+
+    .dashboard-metric {
+      padding: 22px 18px;
+      text-align: center;
+      border-right: 1px solid rgba(127, 156, 216, 0.12);
+    }
+
+    .dashboard-metric:last-child {
+      border-right: 0;
+    }
+
+    .dashboard-metric strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 10px;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+    }
+
+    .dashboard-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .dashboard-overview {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 18px;
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(127, 156, 216, 0.16);
+      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.08);
+    }
+
+    .dashboard-overview-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .dashboard-overview-head h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 18px;
+    }
+
+    .dashboard-overview-head span {
+      min-height: 34px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 12px;
+      background: #f5f9ff;
+      border: 1px solid rgba(127, 156, 216, 0.16);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .dashboard-overview-side {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+      padding-top: 44px;
+    }
+
+    .dashboard-side-stat strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 8px;
       color: var(--text);
-      background: rgba(15, 23, 42, 0.4);
+      letter-spacing: -0.04em;
     }
 
-    .ghost-btn:hover {
-      border-color: var(--cyan);
-      box-shadow: 0 14px 28px rgba(56, 189, 248, 0.18);
+    .dashboard-side-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 20px;
+      padding-right: 18px;
+    }
+
+    .hero-copy h1 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      max-width: 760px;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 720px;
     }
 
     .chip-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 18px;
     }
 
     .chip {
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      font-size: 12px;
-      color: #bae6fd;
-    }
-
-    .profile-card {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+      display: inline-flex;
       align-items: center;
-      text-align: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid rgba(59, 109, 246, 0.08);
+      color: #41506d;
+      font-size: 13px;
+      font-weight: 700;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
-    .profile-pic {
-      width: 150px;
-      height: 150px;
+    .chip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(59, 109, 246, 0.12);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .stats-grid,
+    .metric-grid,
+    .systems-grid,
+    .project-grid,
+    .contact-grid,
+    .education-grid {
+      display: grid;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .metric-card,
+    .surface-card,
+    .project-card,
+    .contact-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 34px rgba(31, 62, 118, 0.08);
+      min-width: 0;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+    }
+
+    .interactive-card {
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .interactive-card::after {
+      content: "";
+      position: absolute;
+      inset: -42% auto auto -24%;
+      width: 140px;
+      height: 220px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
+      opacity: 0;
+      transform: rotate(18deg) translate3d(-24px, -18px, 0);
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .interactive-card:hover::after {
+      opacity: 0.75;
+      animation: sheenSweep 1s ease;
+    }
+
+    .metric-card strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .metric-card:hover,
+    .surface-card:hover,
+    .project-card:hover,
+    .contact-card:hover,
+    .timeline-body:hover,
+    .timeline-meta:hover,
+    .education-card:hover,
+    .focus-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 40px rgba(31, 62, 118, 0.12);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 100%;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2) 35%, transparent 36%),
+        linear-gradient(145deg, rgba(234, 242, 255, 0.9), rgba(235, 244, 255, 0.72));
+      border: 1px solid rgba(116, 153, 230, 0.18);
+      overflow: hidden;
+      display: grid;
+      align-content: end;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 6% -12% auto auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(76, 142, 255, 0.28), transparent 68%);
+      filter: blur(10px);
+    }
+
+    .wave {
+      position: absolute;
+      inset: auto -8% -2% -4%;
+      height: 56%;
+      background:
+        radial-gradient(circle at 15% 36%, rgba(142, 194, 255, 0.3), transparent 20%),
+        linear-gradient(135deg, rgba(99, 152, 255, 0.9), rgba(141, 206, 255, 0.58));
+      border-top-left-radius: 120px;
+      border-top-right-radius: 120px;
+      transform: perspective(1200px) rotateX(62deg) rotateZ(-12deg);
+      transform-origin: bottom;
+      opacity: 0.78;
+    }
+
+    .wave::before,
+    .wave::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.85) 1.1px, transparent 1.3px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.26) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.26) 1px, transparent 1px);
+      background-size: 16px 16px, 30px 30px, 30px 30px;
+      opacity: 0.22;
+    }
+
+    .wave {
+      animation: waveDrift 8.5s ease-in-out infinite;
+    }
+
+    .hero-panel {
+      position: relative;
+      z-index: 1;
+      width: min(360px, 100%);
+      margin-left: auto;
+      padding: 22px;
       border-radius: 24px;
-      object-fit: cover;
-      border: 2px solid rgba(56, 189, 248, 0.5);
-      box-shadow: 0 20px 35px rgba(15, 23, 42, 0.6);
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(115, 152, 230, 0.22);
+      box-shadow: 0 20px 40px rgba(37, 70, 128, 0.14);
+      backdrop-filter: blur(14px);
     }
 
-    .mini-grid {
-      width: 100%;
+    .hero-panel h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .hero-panel > p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .hero-panel-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
 
-    .mini-card {
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 16px;
-      padding: 12px;
-      font-size: 13px;
-      color: var(--muted);
-      border: 1px solid rgba(56, 189, 248, 0.18);
+    .hero-panel-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(123, 159, 235, 0.18);
     }
 
-    .stat-number {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--amber);
+    .hero-panel-card strong,
+    .hero-panel-card span {
+      display: block;
+    }
+
+    .hero-panel-card strong {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .hero-panel-card span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .hero-panel-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-panel-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px rgba(37, 70, 128, 0.12);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr) 180px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 20px;
+      bottom: -18px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(59, 109, 246, 0.24), rgba(143, 210, 255, 0.05));
+    }
+
+    .timeline-item:last-child::before {
+      display: none;
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-top: 6px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      box-shadow: 0 0 0 5px rgba(59, 109, 246, 0.1);
+      animation: dotPulse 2.8s ease-in-out infinite;
+    }
+
+    .timeline-body {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 30px rgba(30, 61, 116, 0.08);
+    }
+
+    .timeline-body h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 20px;
       margin-bottom: 6px;
     }
 
-    .stat-label {
+    .timeline-role {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
+      margin-bottom: 16px;
     }
 
-    .about-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .about-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--muted);
-    }
-
-    .about-item i {
-      color: var(--cyan);
-      margin-top: 4px;
-    }
-
-    .impact-list {
+    .timeline-list,
+    .clean-list {
       display: grid;
       gap: 10px;
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 15px;
+      list-style: none;
     }
 
-    .impact-list li {
-      list-style: none;
-      padding-left: 20px;
+    .timeline-list li,
+    .clean-list li {
+      color: #3f4e69;
+      line-height: 1.8;
+      font-size: 14px;
+      padding-left: 18px;
       position: relative;
     }
 
-    .impact-list li::before {
+    .motion-item {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .motion-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-list li::before,
+    .clean-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 8px;
+      top: 11px;
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
     }
 
-    .projects-grid .project-card h3 {
-      color: #e0f2fe;
-      margin-bottom: 12px;
-      font-size: 20px;
+    .timeline-meta {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, #f9fbff, #edf5ff);
+      border: 1px solid var(--border);
+    }
+
+    .timeline-meta strong {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-meta span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .systems-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .system-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .system-title {
+      display: flex;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .system-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(59, 109, 246, 0.12), rgba(143, 210, 255, 0.2));
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .system-title h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .system-title p,
+    .surface-card p,
+    .project-card p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .mini-badge {
+      align-self: start;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(59, 109, 246, 0.08);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .system-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .system-kpi {
+      padding: 14px;
+      border-radius: 16px;
+      background: #f7faff;
+      border: 1px solid rgba(127, 156, 216, 0.16);
+    }
+
+    .system-kpi strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .system-kpi span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .system-kpi {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .system-kpi:hover {
+      transform: translateY(-3px);
+      background: #ffffff;
+      border-color: rgba(59, 109, 246, 0.2);
+      box-shadow: 0 14px 22px rgba(37, 70, 128, 0.08);
+    }
+
+    .line-chart {
+      position: relative;
+      height: 200px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(245, 250, 255, 0.92)),
+        linear-gradient(90deg, rgba(124, 156, 220, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(124, 156, 220, 0.08) 1px, transparent 1px);
+      background-size: auto, 46px 46px, 46px 46px;
+      overflow: hidden;
+    }
+
+    .line-chart svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .chart-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      filter: drop-shadow(0 8px 18px rgba(59, 109, 246, 0.14));
+    }
+
+    .line-chart.is-visible .chart-line {
+      animation: chartDraw 1.9s cubic-bezier(0.2, 0.75, 0.2, 1) forwards;
+    }
+
+    .line-chart.is-visible .chart-line.chart-line-secondary {
+      animation-delay: 0.18s;
+    }
+
+    .chart-dot {
+      transform-origin: center;
+      opacity: 0;
+    }
+
+    .line-chart.is-visible .chart-dot {
+      animation: chartDotIn 0.55s ease forwards, chartDotPulse 2.6s ease-in-out 0.65s infinite;
+    }
+
+    .line-chart.is-visible .chart-dot.chart-dot-secondary {
+      animation-delay: 0.24s, 0.88s;
+    }
+
+    .line-chart-labels {
+      position: absolute;
+      bottom: 14px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-card {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project-preview {
+      aspect-ratio: 16 / 10;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(127, 156, 216, 0.18);
+      cursor: zoom-in;
+      background: #edf3ff;
+    }
+
+    .project-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-preview:hover img {
+      transform: scale(1.03);
+    }
+
+    .project-preview {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-preview:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(37, 70, 128, 0.12);
+    }
+
+    .project-card h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 18px;
+      line-height: 1.4;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 14px 0;
     }
 
     .project-tags span {
-      background: rgba(163, 230, 53, 0.15);
-      border: 1px solid rgba(163, 230, 53, 0.25);
-      padding: 4px 10px;
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
       border-radius: 999px;
+      background: var(--chip);
+      color: #48617f;
       font-size: 12px;
-      color: #d9f99d;
+      font-weight: 700;
     }
 
-    .gallery-preview {
+    .skill-columns {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin: 16px 0;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
     }
 
-    .gallery-thumb {
-      border-radius: 16px;
+    .skill-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .skill-row {
+      display: grid;
+      gap: 10px;
+    }
+
+    .skill-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .skill-meta span:last-child {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .skill-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #eaf1ff;
       overflow: hidden;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      background: rgba(2, 6, 23, 0.35);
-      aspect-ratio: 16 / 9;
     }
 
-    .gallery-thumb img {
-      width: 100%;
+    .skill-fill {
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.35s ease;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      width: 0 !important;
+      transition: width 1.05s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .gallery-thumb:hover img {
-      transform: scale(1.05);
+    .skill-row.is-visible .skill-fill {
+      width: var(--target-width) !important;
     }
 
-    .skills-grid {
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill-pill {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      color: #41506d;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .focus-grid {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .skill-card {
-      text-align: center;
+    .focus-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f8fbff, #eff5ff);
+      border: 1px solid var(--border);
     }
 
-    .skill-card i {
-      font-size: 26px;
-      color: var(--cyan);
+    .focus-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .focus-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    @keyframes sheenSweep {
+      0% {
+        transform: rotate(18deg) translate3d(-30px, -20px, 0);
+      }
+      100% {
+        transform: rotate(18deg) translate3d(220px, 28px, 0);
+      }
+    }
+
+    @keyframes waveDrift {
+      0%, 100% {
+        transform: perspective(1200px) rotateX(62deg) rotateZ(-12deg) translate3d(0, 0, 0);
+      }
+      50% {
+        transform: perspective(1200px) rotateX(62deg) rotateZ(-10deg) translate3d(0, -6px, 0);
+      }
+    }
+
+    @keyframes waveLayerFloat {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(-8px, -6px, 0) scale(1.01);
+      }
+    }
+
+    @keyframes waveGlowPulse {
+      0%, 100% {
+        opacity: 0.72;
+      }
+      50% {
+        opacity: 0.94;
+      }
+    }
+
+    @keyframes dotPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 5px rgba(59, 109, 246, 0.1);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(59, 109, 246, 0.06);
+      }
+    }
+
+    @keyframes chartDraw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes chartDotIn {
+      from {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes chartDotPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    .education-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .education-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 30px rgba(32, 60, 110, 0.08);
+    }
+
+    .education-card h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
       margin-bottom: 10px;
     }
 
-    .education-grid .bento-card h3 {
-      color: #e0f2fe;
-      margin-bottom: 8px;
+    .education-card .period {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: #edf4ff;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
 
-    .edu-year {
-      display: inline-block;
-      margin-bottom: 12px;
+    .education-card p {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 10px;
     }
 
-    footer {
-      padding: 40px 0 60px;
-      text-align: center;
-      border-top: 1px solid rgba(56, 189, 248, 0.1);
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #f8fbff;
+      border: 1px solid var(--border);
+    }
+
+    .contact-item i {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(59, 109, 246, 0.12), rgba(143, 210, 255, 0.18));
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: 14px;
+      word-break: break-word;
     }
 
     .contact-form {
       display: grid;
-      gap: 12px;
-      max-width: 520px;
-      margin: 18px auto 0;
-      text-align: left;
+      gap: 14px;
     }
 
-    .contact-card {
-      max-width: 720px;
-      margin: 0 auto 24px;
-      text-align: left;
-      position: relative;
-    }
-
-    .contact-card::after {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: 24px;
-      background: linear-gradient(120deg, rgba(56, 189, 248, 0.35), rgba(250, 204, 21, 0.15));
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: -1;
-    }
-
-    .contact-card:hover::after {
-      opacity: 1;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      margin-top: 8px;
-      margin-bottom: 0;
-    }
-
-    .contact-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #bae6fd;
-      margin-top: 14px;
-      transition: transform 0.3s ease;
-    }
-
-    .contact-card:hover .contact-cta {
-      transform: translateX(4px);
-    }
-
-    .contact-field {
+    .field-row {
       display: grid;
-      gap: 6px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field span {
       font-size: 13px;
-      color: var(--muted);
+      font-weight: 700;
+      color: #43506c;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    .field input,
+    .field textarea {
       width: 100%;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      background: rgba(8, 14, 26, 0.8);
+      border: 1px solid rgba(127, 156, 216, 0.24);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.94);
       color: var(--text);
-      font-family: "Space Grotesk", sans-serif;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
+      font: inherit;
+      padding: 14px 16px;
       outline: none;
-      border-color: rgba(56, 189, 248, 0.7);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      transition: border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .contact-form input:hover,
-    .contact-form textarea:hover {
-      border-color: rgba(56, 189, 248, 0.5);
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
+    .field textarea {
+      min-height: 150px;
       resize: vertical;
     }
 
-    .contact-form .btn {
-      justify-content: center;
-      width: 100%;
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(59, 109, 246, 0.45);
+      box-shadow: 0 0 0 4px rgba(59, 109, 246, 0.08);
     }
 
-    .socials {
+    .footer-note {
       display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 18px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 8px 4px 0;
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .socials a {
-      width: 44px;
-      height: 44px;
+    .social-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-row a {
+      width: 40px;
+      height: 40px;
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: var(--cyan);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    body[data-theme="light"] .hero-title,
-    body[data-theme="light"] .projects-grid .project-card h3,
-    body[data-theme="light"] .education-grid .bento-card h3 {
-      color: #0f172a;
-    }
-
-    body[data-theme="light"] .hero-subtitle,
-    body[data-theme="light"] .section-head p,
-    body[data-theme="light"] .about-item,
-    body[data-theme="light"] .impact-list,
-    body[data-theme="light"] .stat-label,
-    body[data-theme="light"] .contact-card p {
-      color: #334155;
-    }
-
-    body[data-theme="light"] .chip {
-      background: rgba(14, 165, 233, 0.12);
-      border-color: rgba(14, 165, 233, 0.3);
-      color: #1e3a8a;
-    }
-
-    body[data-theme="light"] .mini-card {
-      background: rgba(226, 232, 240, 0.9);
-      color: #1f2937;
-      border-color: rgba(14, 165, 233, 0.25);
-    }
-
-    body[data-theme="light"] .stat-number {
-      color: #f59e0b;
-    }
-
-    body[data-theme="light"] .project-tags span {
-      background: rgba(101, 163, 13, 0.16);
-      border-color: rgba(101, 163, 13, 0.35);
-      color: #365314;
-    }
-
-    body[data-theme="light"] .gallery-thumb {
-      border-color: rgba(14, 165, 233, 0.3);
-      background: rgba(248, 250, 252, 0.9);
-    }
-
-    body[data-theme="light"] .contact-cta {
-      color: #1e40af;
-    }
-
-    body[data-theme="light"] .ghost-btn {
-      background: rgba(226, 232, 240, 0.9);
-      color: #0f172a;
-      border-color: rgba(14, 165, 233, 0.35);
-    }
-
-    body[data-theme="light"] .socials a {
-      background: rgba(248, 250, 252, 0.9);
-      border-color: rgba(14, 165, 233, 0.3);
-      color: #0ea5e9;
-    }
-
-    body[data-theme="light"] .contact-form input,
-    body[data-theme="light"] .contact-form textarea {
-      background: rgba(248, 250, 252, 0.95);
-      color: #0f172a;
-      border-color: rgba(14, 165, 233, 0.3);
-    }
-
-    .socials a:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(56, 189, 248, 0.25);
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(2, 6, 23, 0.85);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-    }
-
-    .modal-content {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 20px;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 900px;
-      width: 100%;
-      border: 1px solid rgba(56, 189, 248, 0.2);
-    }
-
-    .modal-content img {
-      border-radius: 14px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .modal-content img:hover {
-      transform: scale(1.05);
-    }
-
-    .close {
-      position: absolute;
-      top: 18px;
-      right: 24px;
-      font-size: 32px;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .gallery-modal {
-      align-items: stretch;
-    }
-
-    .gallery-content {
-      max-width: 1100px;
-      max-height: 82vh;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      overflow: hidden;
-    }
-
-    .gallery-toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(9, 15, 28, 0.85);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      backdrop-filter: blur(10px);
-    }
-
-    .gallery-filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .gallery-filter {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      background: rgba(56, 189, 248, 0.12);
-      color: #bae6fd;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-filter.active {
-      background: linear-gradient(120deg, var(--cyan), var(--amber));
-      color: #04111f;
-      box-shadow: 0 12px 24px rgba(56, 189, 248, 0.25);
-    }
-
-    .gallery-filter:hover {
-      transform: translateY(-1px);
-    }
-
-    .gallery-count {
-      font-size: 12px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
       color: var(--muted);
-      display: inline-flex;
-      gap: 6px;
-      align-items: center;
+      transition: color 0.22s ease, transform 0.22s ease, background 0.22s ease;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      overflow: auto;
-      padding-right: 6px;
+    .social-row a:hover {
+      color: var(--accent);
+      background: #ffffff;
+      transform: translateY(-2px);
     }
 
-    .gallery-grid::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .gallery-grid::-webkit-scrollbar-thumb {
-      background: rgba(56, 189, 248, 0.35);
-      border-radius: 999px;
-    }
-
-    body[data-theme="light"] .gallery-toolbar {
-      background: rgba(248, 250, 252, 0.95);
-      border-color: rgba(14, 165, 233, 0.3);
-    }
-
-    body[data-theme="light"] .gallery-filter {
-      background: rgba(14, 165, 233, 0.12);
-      border-color: rgba(14, 165, 233, 0.3);
-      color: #1e3a8a;
-    }
-
-    body[data-theme="light"] .gallery-count {
-      color: #334155;
-    }
-
-    .zoom-modal {
-      display: none;
+    .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(2, 6, 23, 0.92);
-      z-index: 3000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(12, 20, 41, 0.72);
+      backdrop-filter: blur(10px);
+      z-index: 40;
     }
 
-    .zoom-content img,
-    .zoom-content iframe {
-      max-width: 92vw;
-      max-height: 82vh;
-      border-radius: 18px;
-      box-shadow: 0 20px 50px rgba(2, 6, 23, 0.6);
+    .lightbox.is-open {
+      display: grid;
     }
 
-    @media (max-width: 900px) {
-      header {
-        flex-wrap: wrap;
+    .lightbox img {
+      width: min(1200px, 92vw);
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+      background: #fff;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1240px) {
+      .app-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+      }
+
+      .workspace {
+        padding-bottom: 8px;
+      }
+
+      .hero-grid,
+      .dashboard-hero,
+      .skill-columns,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-visual {
+        min-height: 280px;
+      }
+
+      .dashboard-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-overview-side {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .stats-grid,
+      .project-grid,
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .systems-grid,
+      .education-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .timeline-item {
+        grid-template-columns: 20px minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --anchor-offset: 84px;
+      }
+
+      .app-shell {
+        width: min(100vw - 16px, 100%);
+        margin: 8px auto;
         gap: 14px;
       }
 
-      section {
-        padding: 90px 0 70px;
+      .sidebar,
+      .topbar,
+      .section-card {
+        border-radius: 24px;
       }
 
-      .bento-grid,
-      .skills-grid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+      .topbar {
+        position: static;
+        padding: 16px 18px;
       }
 
-      .span-9, .span-8, .span-7, .span-6, .span-5 {
-        grid-column: span 6;
-      }
-    }
-
-    @media (max-width: 640px) {
-      header {
-        position: sticky;
+      .section-head {
+        flex-direction: column;
       }
 
-      .bento-grid,
-      .skills-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+      .topbar-copy span {
+        display: none;
       }
 
-      .span-12, .span-9, .span-8, .span-7, .span-6, .span-5, .span-4, .span-3 {
-        grid-column: span 1;
+      .hero-copy h1 {
+        font-size: 36px;
       }
 
-      .hero-subtitle {
-        font-size: 16px;
+      .dashboard-copy {
+        padding: 0;
       }
 
-      .profile-pic {
-        width: 120px;
-        height: 120px;
+      .dashboard-copy h1 {
+        font-size: 36px;
+      }
+
+      .dashboard-visual {
+        min-height: 220px;
+      }
+
+      .stats-grid,
+      .project-grid,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel-grid,
+      .system-kpis,
+      .field-row,
+      .sidebar-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .dashboard-metrics,
+      .dashboard-overview-side {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-overview {
+        padding: 18px;
+      }
+
+      .dashboard-overview-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .sidebar-actions > * {
+        min-width: 0;
+      }
+
+      .icon-button {
+        min-height: 40px;
+        padding: 0 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        gap: 6px;
+      }
+
+      .icon-button i {
+        font-size: 13px;
+      }
+
+      .section-card,
+      .timeline-body,
+      .metric-card,
+      .surface-card,
+      .project-card,
+      .contact-card,
+      .education-card {
+        padding: 20px;
+      }
+
+      .sidebar {
+        padding: 18px 14px;
+      }
+
+      .nav-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-link {
+        font-size: 13px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      * {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         animation: none !important;
         transition: none !important;
+      }
+
+      .motion-item {
+        opacity: 1;
+        transform: none;
+      }
+
+      .skill-fill {
+        width: var(--target-width) !important;
+      }
+
+      .chart-line {
+        stroke-dashoffset: 0;
+      }
+
+      .chart-dot {
+        opacity: 1;
+        transform: scale(1);
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="#hero" data-i18n="nav_home">Home</a>
-    <a href="#about" data-i18n="nav_about">About</a>
-    <a href="#experience" data-i18n="nav_experience">Experience</a>
-    <a href="#projects" data-i18n="nav_projects">Projects</a>
-    <a href="#skills" data-i18n="nav_skills">Skills</a>
-    <a href="#education" data-i18n="nav_education">Education</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
-    <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">EN</button>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">LIGHT</button>
-  </header>
-
-  <section id="hero">
-    <div class="container">
-      <div class="bento-grid hero-grid">
-        <div class="bento-card span-7" data-aos="fade-right">
-          <div class="logo-scan">
-            <span class="scan-glow"></span>
-            <span class="scan-grid"></span>
-            <span class="scan-flicker"></span>
-            <img src="logo.png" alt="Logo">
-          </div>
-          <div class="eyebrow" data-i18n="hero_eyebrow">Future CV</div>
-          <h1 class="hero-title">Adzi Purnomo</h1>
-          <p class="hero-subtitle" data-i18n="hero_subtitle">Technician | Web Developer | IT Staff</p>
-          <div class="chip-row">
-            <span class="chip" data-i18n="hero_chip_1">IoT Builder</span>
-            <span class="chip" data-i18n="hero_chip_2">Web Systems</span>
-            <span class="chip" data-i18n="hero_chip_3">Hardware + Software</span>
-          </div>
-          <div class="chip-row" style="margin-top: 22px;">
-            <a href="#projects" class="btn" data-i18n="hero_cta_primary">Explore My Work</a>
-            <a href="#contact" class="ghost-btn" data-i18n="hero_cta_secondary">Contact Me</a>
-          </div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="logo.png" alt="AP Logo">
         </div>
-        <div class="bento-card profile-card span-5" data-aos="fade-left">
-          <img src="https://cdn.pixabay.com/photo/2025/09/16/02/45/profile-9836912_1280.png" alt="Foto Profil" class="profile-pic">
-          <p data-i18n="hero_profile_desc">Berbasis di Indonesia. Terbiasa menangani produk elektronik, sistem IoT, dan aplikasi berbasis web.</p>
-          <div class="mini-grid">
-            <div class="mini-card">
-              <strong data-i18n="hero_focus_label">Focus</strong><br><span data-i18n="hero_focus_value">IoT, Web Apps, Automation</span>
+        <div class="brand-copy">
+          <strong>Adzi Purnomo</strong>
+          <span>IT Programmer / System Support</span>
+        </div>
+      </div>
+
+      <nav class="nav-group" aria-label="Section Navigation">
+        <a class="nav-link is-active" href="#dashboard"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="#experience"><i class="fa-solid fa-briefcase"></i><span>Experience</span></a>
+        <a class="nav-link" href="#systems"><i class="fa-solid fa-window-maximize"></i><span>Systems</span></a>
+        <a class="nav-link" href="#projects"><i class="fa-solid fa-folder-open"></i><span>Projects</span></a>
+        <a class="nav-link" href="#skills"><i class="fa-solid fa-gem"></i><span>Skills</span></a>
+        <a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i><span>Education</span></a>
+        <a class="nav-link" href="#contact"><i class="fa-solid fa-paper-plane"></i><span>Contact</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-note">
+          <strong>Professional Summary</strong>
+          <p>IT Programmer dan System Support dengan fokus pada operasional aplikasi, troubleshooting, dan pengembangan web.</p>
+        </div>
+        <div class="sidebar-actions">
+          <a class="icon-button" href="mailto:adzypurnomo@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <button class="icon-button" id="scrollTopBtn" type="button"><i class="fa-solid fa-arrow-up"></i> Top</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <div class="topbar">
+        <div class="topbar-copy">
+          <strong>CV Dashboard</strong>
+          <span>Profil profesional yang menampilkan pengalaman kerja, sistem yang ditangani, dan project unggulan.</span>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn-secondary" href="https://github.com/Adzipurnomo18" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="btn" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        </div>
+      </div>
+
+      <div class="page">
+        <section class="section-card" id="dashboard">
+          <div class="dashboard-hero">
+            <div class="dashboard-copy">
+              <span class="eyebrow">IT Programmer / System Support Engineer</span>
+              <div>
+                <h1>Adzi Purnomo</h1>
+                <p>
+                  IT Programmer yang berfokus pada pengembangan, pemeliharaan, dan dukungan
+                  sistem bisnis operasional. Saat ini menangani aplikasi POS dan Mitrasoft HRD
+                  di PT Surya Pratama Keramindo dengan pendekatan kerja yang menekankan stabilitas,
+                  analisis masalah, dan efektivitas proses user internal.
+                </p>
+              </div>
+              <div class="dashboard-actions">
+                <a class="btn" href="#projects"><i class="fa-solid fa-folder-open"></i> View My Work</a>
+                <a class="btn-secondary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+              </div>
             </div>
-            <div class="mini-card">
-              <strong data-i18n="hero_stack_label">Stack</strong><br><span data-i18n="hero_stack_value">JS, Python, PHP, MySQL</span>
+
+            <div class="dashboard-visual" aria-hidden="true">
+              <div class="dashboard-wave-scene">
+                <svg class="dashboard-wave-svg" viewBox="0 0 760 420" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <linearGradient id="waveBlueFar" x1="212" y1="126" x2="670" y2="344" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#D9E8FF" stop-opacity="0.95"/>
+                      <stop offset="0.58" stop-color="#8DB8FF" stop-opacity="0.72"/>
+                      <stop offset="1" stop-color="#CFE2FF" stop-opacity="0.22"/>
+                    </linearGradient>
+                    <linearGradient id="waveBlueMid" x1="174" y1="176" x2="690" y2="320" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#7DB5FF" stop-opacity="0.16"/>
+                      <stop offset="0.46" stop-color="#3B7BFF" stop-opacity="0.85"/>
+                      <stop offset="1" stop-color="#A7D3FF" stop-opacity="0.3"/>
+                    </linearGradient>
+                    <linearGradient id="waveBlueFront" x1="176" y1="140" x2="682" y2="338" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#C8E0FF" stop-opacity="0.28"/>
+                      <stop offset="0.34" stop-color="#4D7EFF" stop-opacity="0.92"/>
+                      <stop offset="0.72" stop-color="#2E64F0" stop-opacity="0.96"/>
+                      <stop offset="1" stop-color="#9FD3FF" stop-opacity="0.26"/>
+                    </linearGradient>
+                    <linearGradient id="waveBlueRibbon" x1="188" y1="164" x2="628" y2="282" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#8CB7FF" stop-opacity="0.16"/>
+                      <stop offset="0.38" stop-color="#3E75FF" stop-opacity="0.84"/>
+                      <stop offset="0.72" stop-color="#285EEB" stop-opacity="0.98"/>
+                      <stop offset="1" stop-color="#7FBAFF" stop-opacity="0.28"/>
+                    </linearGradient>
+                    <pattern id="waveDots" width="10" height="10" patternUnits="userSpaceOnUse">
+                      <circle cx="1.6" cy="1.6" r="1.1" fill="white" fill-opacity="0.68"/>
+                    </pattern>
+                  </defs>
+
+                  <g class="dashboard-wave-layer layer-far">
+                    <path d="M392 52C470 52 546 76 602 118C666 166 710 228 754 310L754 378L228 378C256 344 286 310 320 272C350 238 366 218 392 198C432 166 482 144 544 138C610 132 674 144 736 160C702 116 622 52 392 52Z" fill="url(#waveBlueFar)"/>
+                    <path d="M396 70C482 68 572 102 634 160C684 208 720 262 760 340" stroke="url(#waveBlueFar)" stroke-opacity="0.55" stroke-width="18" stroke-linecap="round"/>
+                    <path d="M402 82C488 86 568 122 628 174C678 218 714 266 748 328" stroke="url(#waveDots)" stroke-width="20" stroke-linecap="round" opacity="0.62"/>
+                  </g>
+
+                  <g class="dashboard-wave-layer layer-mid">
+                    <path d="M278 300C324 252 374 212 426 194C478 176 540 182 612 226C654 250 700 286 754 332L754 370L246 370C258 350 268 336 278 300Z" fill="url(#waveBlueMid)"/>
+                    <path d="M254 310C314 250 374 214 434 202C500 190 572 206 650 256C684 278 720 304 754 332" stroke="url(#waveBlueMid)" stroke-width="24" stroke-linecap="round"/>
+                    <path d="M250 322C316 266 380 230 444 216C510 202 582 214 660 258C694 278 726 300 754 320" stroke="url(#waveDots)" stroke-width="16" stroke-linecap="round" opacity="0.58"/>
+                  </g>
+
+                  <g class="dashboard-wave-layer layer-front">
+                    <path d="M224 360C266 314 300 278 340 244C382 208 430 188 492 192C562 198 626 236 700 310C718 328 736 346 754 364L754 394L192 394C204 382 214 372 224 360Z" fill="url(#waveBlueFront)"/>
+                    <path d="M214 350C262 300 308 260 356 232C408 202 466 188 532 206C596 224 652 262 714 324C728 338 742 352 754 366" stroke="url(#waveBlueFront)" stroke-width="28" stroke-linecap="round"/>
+                    <path d="M206 356C258 308 310 266 360 238C416 208 472 196 534 212C596 228 652 266 712 324C726 338 740 352 754 366" stroke="url(#waveDots)" stroke-width="18" stroke-linecap="round" opacity="0.64"/>
+                  </g>
+
+                  <g class="dashboard-wave-layer layer-front">
+                    <path d="M304 274C338 246 374 228 416 222C470 214 522 234 578 280C624 316 676 360 754 418" stroke="url(#waveBlueRibbon)" stroke-width="30" stroke-linecap="round"/>
+                    <path d="M312 282C350 252 386 238 426 234C478 228 528 246 584 288C630 322 680 362 748 412" stroke="url(#waveDots)" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+                  </g>
+
+                  <ellipse class="dashboard-wave-highlight" cx="474" cy="252" rx="126" ry="42" fill="white" fill-opacity="0.18"/>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bento-card span-4" data-aos="fade-up">
-          <div class="stat-number count-up" data-target="8" data-suffix="+">0</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="bento-card span-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="stat-number count-up" data-target="11">0</div>
-          <div class="stat-label">Technologies Mastered</div>
-        </div>
-        <div class="bento-card span-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="stat-number count-up" data-target="100" data-suffix="%">0</div>
-          <div class="stat-label">Project Success</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-head">
-        <h2 data-i18n="about_title">About Me</h2>
-        <p data-i18n="about_subtitle">Profil singkat dengan fokus pada kemampuan teknis, analisis, dan solusi digital modern.</p>
-      </div>
-      <div class="bento-grid">
-        <div class="bento-card span-7" data-aos="fade-up">
-          <p data-i18n="about_body">
-            Lulusan S1 Teknik Informatika dengan IPK 3.78, memiliki latar belakang sebagai teknisi
-            elektronik konsumen di PT SITCOMTARA sejak 2017. Terbiasa melakukan troubleshooting
-            perangkat, analisis teknis, dan edukasi pelanggan secara profesional. Berpengalaman
-            mengembangkan solusi berbasis teknologi seperti IoT dan pemrograman sistem berbasis web.
-          </p>
-        </div>
-        <div class="bento-card span-5" data-aos="fade-up" data-aos-delay="150">
-          <div class="about-list">
-            <div class="about-item"><i class="fa-solid fa-microchip"></i><span data-i18n="about_item_1">Analisis perangkat dan otomasi sistem.</span></div>
-            <div class="about-item"><i class="fa-solid fa-code"></i><span data-i18n="about_item_2">Pengembangan web responsif dan interaktif.</span></div>
-            <div class="about-item"><i class="fa-solid fa-signal"></i><span data-i18n="about_item_3">Integrasi IoT untuk monitoring real time.</span></div>
-            <div class="about-item"><i class="fa-solid fa-users"></i><span data-i18n="about_item_4">Edukasi teknis dan komunikasi dengan klien.</span></div>
+          <div class="dashboard-metrics">
+            <div class="dashboard-metric">
+              <strong class="count-up" data-target="8" data-suffix="+">8+</strong>
+              <span>Years Experience</span>
+            </div>
+            <div class="dashboard-metric">
+              <strong class="count-up" data-target="2">2</strong>
+              <span>Core Systems</span>
+            </div>
+            <div class="dashboard-metric">
+              <strong class="count-up" data-target="3" data-suffix="+">3+</strong>
+              <span>Portfolio Domains</span>
+            </div>
+            <div class="dashboard-metric">
+              <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+              <span>Current Role Duration</span>
+            </div>
+          </div>
+
+          <div class="dashboard-overview">
+            <div>
+              <div class="dashboard-overview-head">
+                <h3>Professional Capability Overview</h3>
+                <span>This Year</span>
+              </div>
+              <div class="line-chart" aria-label="Professional capability overview">
+                <svg viewBox="0 0 1000 220" preserveAspectRatio="none" role="img" aria-hidden="true">
+                  <polyline fill="none" stroke="#3b6df6" stroke-width="4" points="40,92 120,98 200,94 280,102 360,100 440,102 520,86 600,90 680,84 760,88 840,82 930,78" />
+                  <polyline fill="none" stroke="#56b5ff" stroke-width="4" points="40,136 120,152 200,124 280,122 360,138 440,128 520,140 600,138 680,118 760,122 840,140 930,146" />
+                  <polyline fill="none" stroke="#68d8c2" stroke-width="4" points="40,172 120,178 200,168 280,174 360,176 440,178 520,176 600,180 680,172 760,170 840,176 930,174" />
+                  <circle cx="930" cy="78" r="6" fill="#3b6df6"></circle>
+                  <circle cx="930" cy="146" r="6" fill="#56b5ff"></circle>
+                  <circle cx="930" cy="174" r="6" fill="#68d8c2"></circle>
+                </svg>
+                <div class="line-chart-labels">
+                  <span>Support</span>
+                  <span>Analysis</span>
+                  <span>Systems</span>
+                  <span>Delivery</span>
+                  <span>Growth</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-overview-side">
+              <div class="dashboard-side-stat">
+                <strong class="count-up" data-target="2">2</strong>
+                <span>Core systems actively handled in the current role.</span>
+              </div>
+              <div class="dashboard-side-stat">
+                <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+                <span>Current duration supporting operational applications.</span>
+              </div>
+              <div class="dashboard-side-stat">
+                <strong class="count-up" data-target="9">9</strong>
+                <span>Technical areas consistently represented across work and portfolio.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="experience">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Experience</span>
+              <h2>Perjalanan kerja yang relevan</h2>
+            </div>
+            <p>Pengalaman profesional yang membentuk kekuatan di bidang troubleshooting, system handling, operational support, dan pengembangan aplikasi berbasis web.</p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-body">
+                <h3>PT Surya Pratama Keramindo</h3>
+                <div class="timeline-role">Staff IT Programmer - 2025 - Present</div>
+                <ul class="timeline-list">
+                  <li>Menangani aplikasi POS untuk kebutuhan transaksi dan operasional harian agar alur kerja tetap berjalan stabil.</li>
+                  <li>Mendukung penggunaan Mitrasoft HRD pada proses internal, termasuk penanganan kendala aplikasi dan verifikasi alur data.</li>
+                  <li>Melakukan troubleshooting, analisis masalah berulang, serta koordinasi tindak lanjut teknis pada sistem yang dipakai user internal.</li>
+                  <li>Menghubungkan kebutuhan operasional dengan solusi teknis yang realistis, bukan sekadar tampilan antarmuka.</li>
+                </ul>
+              </div>
+              <div class="timeline-meta">
+                <strong class="count-up" data-target="2">2</strong>
+                <span>Core systems handled</span>
+                <strong class="count-up" data-target="7" data-suffix=" mo" style="margin-top:16px;">7 mo</strong>
+                <span>Durasi aktif saat ini</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-body">
+                <h3>PT Sitcomtara</h3>
+                <div class="timeline-role">Technician Consumer Electronics - 2017 - 2025</div>
+                <ul class="timeline-list">
+                  <li>Melakukan diagnosa dan perbaikan perangkat elektronik konsumen dengan pendekatan troubleshooting yang sistematis.</li>
+                  <li>Menghadapi kasus teknis lapangan, edukasi pengguna, dan penanganan masalah berbasis analisis gejala serta akar masalah.</li>
+                  <li>Pengalaman ini memperkuat kemampuan problem solving, ketelitian teknis, dan konsistensi layanan.</li>
+                </ul>
+              </div>
+              <div class="timeline-meta">
+                <strong class="count-up" data-target="8" data-suffix="+">8+</strong>
+                <span>Years experience</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="systems">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Systems</span>
+              <h2>Sistem yang sedang ditangani</h2>
+            </div>
+            <p>Ringkasan area sistem yang saat ini ditangani dalam operasional perusahaan, mencakup dukungan aplikasi, analisis kendala, dan koordinasi kebutuhan user.</p>
+          </div>
+
+          <div class="grid-4" style="margin-bottom:18px;">
+            <div class="metric-card">
+              <strong class="count-up" data-target="2">2</strong>
+              <span>Core systems yang ditangani pada role saat ini.</span>
+            </div>
+            <div class="metric-card">
+              <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+              <span>Durasi aktif menangani sistem operasional saat ini.</span>
+            </div>
+            <div class="metric-card">
+              <strong class="count-up" data-target="8" data-suffix="+">8+</strong>
+              <span>Tahun fondasi teknis yang menopang problem solving sistem.</span>
+            </div>
+            <div class="metric-card">
+              <strong class="count-up" data-target="3">3</strong>
+              <span>Domain portfolio yang mendukung perspektif system handling.</span>
+            </div>
+          </div>
+
+          <div class="systems-grid">
+            <article class="surface-card">
+              <div class="system-head">
+                <div class="system-title">
+                  <div class="system-icon"><i class="fa-solid fa-cash-register"></i></div>
+                  <div>
+                    <h3>POS System</h3>
+                    <p>Sistem operasional untuk transaksi dan proses harian.</p>
+                  </div>
+                </div>
+                <span class="mini-badge">Current</span>
+              </div>
+
+              <div class="system-kpis">
+                <div class="system-kpi">
+                  <strong class="count-up" data-target="1" data-suffix=" / 2">1 / 2</strong>
+                  <span>Bagian dari dua sistem inti yang saat ini ditangani.</span>
+                </div>
+                <div class="system-kpi">
+                  <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+                  <span>Periode dukungan aktif dalam role saat ini.</span>
+                </div>
+                <div class="system-kpi">
+                  <strong class="count-up" data-target="8" data-suffix="+ yr">8+ yr</strong>
+                  <span>Basis pengalaman teknis untuk troubleshooting.</span>
+                </div>
+              </div>
+
+              <ul class="clean-list">
+                <li>Membantu identifikasi error operasional dan memastikan kendala tidak berhenti di laporan verbal saja.</li>
+                <li>Memeriksa alur penggunaan sistem dari sisi transaksi, input data, dan masalah yang berdampak ke workflow harian.</li>
+                <li>Menjaga komunikasi antara kebutuhan user dan tindakan teknis agar penyelesaian masalah lebih cepat dan jelas.</li>
+              </ul>
+            </article>
+
+            <article class="surface-card">
+              <div class="system-head">
+                <div class="system-title">
+                  <div class="system-icon"><i class="fa-solid fa-user-gear"></i></div>
+                  <div>
+                    <h3>Mitrasoft HRD</h3>
+                    <p>Sistem HR internal untuk data dan proses karyawan.</p>
+                  </div>
+                </div>
+                <span class="mini-badge">Current</span>
+              </div>
+
+              <div class="system-kpis">
+                <div class="system-kpi">
+                  <strong class="count-up" data-target="1" data-suffix=" / 2">1 / 2</strong>
+                  <span>Bagian dari dua sistem inti yang saat ini ditangani.</span>
+                </div>
+                <div class="system-kpi">
+                  <strong class="count-up" data-target="7" data-suffix=" mo">7 mo</strong>
+                  <span>Periode dukungan aktif dalam role saat ini.</span>
+                </div>
+                <div class="system-kpi">
+                  <strong class="count-up" data-target="8" data-suffix="+ yr">8+ yr</strong>
+                  <span>Basis pengalaman teknis untuk analisis issue.</span>
+                </div>
+              </div>
+
+              <ul class="clean-list">
+                <li>Menangani kendala penggunaan aplikasi HRD dari sisi praktik lapangan dan kebutuhan user.</li>
+                <li>Membantu pengecekan masalah terkait data, proses, atau langkah penggunaan yang menghambat pekerjaan internal.</li>
+                <li>Mengandalkan kombinasi analisis teknis dan komunikasi operasional agar perbaikan tidak salah sasaran.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="surface-card" style="margin-top:18px;">
+            <div class="section-head" style="margin-bottom:18px;">
+              <div>
+                <h2 style="font-size:22px; margin-bottom:6px;">Arah kemampuan saat ini</h2>
+              </div>
+              <p style="max-width:520px;">
+                Kombinasi web development, troubleshooting, data flow awareness, dan operational support membentuk profil kerja yang adaptif untuk kebutuhan sistem internal.
+              </p>
+            </div>
+            <div class="line-chart" aria-label="Skill direction overview">
+              <svg viewBox="0 0 1000 220" preserveAspectRatio="none" role="img" aria-hidden="true">
+                <polyline fill="none" stroke="#3b6df6" stroke-width="4" points="40,120 150,102 260,96 370,82 480,78 590,70 700,60 810,48 930,42" />
+                <polyline fill="none" stroke="#8fd2ff" stroke-width="4" points="40,150 150,142 260,136 370,122 480,116 590,110 700,102 810,96 930,90" />
+                <circle cx="930" cy="42" r="6" fill="#3b6df6"></circle>
+                <circle cx="930" cy="90" r="6" fill="#8fd2ff"></circle>
+              </svg>
+              <div class="line-chart-labels">
+                <span>Support</span>
+                <span>Troubleshooting</span>
+                <span>Data Flow</span>
+                <span>Web Dev</span>
+                <span>Current Blend</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="projects">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Projects</span>
+              <h2>Project dari source yang sekarang</h2>
+            </div>
+            <p>Tiga project berikut mewakili pendekatan pada desain antarmuka, alur layanan, dan presentasi data yang pernah dikerjakan.</p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-preview" data-preview="assets/projects/apps-adzi-web-1.png">
+                <img src="assets/projects/apps-adzi-web-1.png" alt="Adzi Web Studio project preview">
+              </div>
+              <div>
+                <h3>Adzi Web Studio Landing Page</h3>
+                <p>Landing page jasa pembuatan website dengan pendekatan modern, bilingual toggle, dark mode, dan presentasi layanan yang diarahkan ke konversi.</p>
+              </div>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive UI</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-preview" data-preview="assets/projects/apps-service-1.png">
+                <img src="assets/projects/apps-service-1.png" alt="Service Elektronik project preview">
+              </div>
+              <div>
+                <h3>Service Laptop & Elektronik Interface</h3>
+                <p>Interface layanan service yang menonjolkan katalog hasil pengerjaan, CTA komunikasi, dan struktur informasi yang cepat dipahami user.</p>
+              </div>
+              <div class="project-tags">
+                <span>Service Workflow</span>
+                <span>Catalog UI</span>
+                <span>Customer CTA</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-preview" data-preview="assets/projects/arsip-unh-1.png">
+                <img src="assets/projects/arsip-unh-1.png" alt="UNH archive project preview">
+              </div>
+              <div>
+                <h3>UNH Informatics Collective Archive</h3>
+                <p>Platform arsip dan dokumentasi angkatan Teknik Informatika UNH dengan struktur publik, bilingual mode, dan penekanan pada data kolektif.</p>
+              </div>
+              <div class="project-tags">
+                <span>Archive Platform</span>
+                <span>ID/EN</span>
+                <span>Data Presentation</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-card" id="skills">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Skills</span>
+              <h2>Keahlian yang lebih sinkron dengan posisi sekarang</h2>
+            </div>
+            <p>Keahlian utama mencakup pengembangan web, analisis masalah teknis, penanganan aplikasi operasional, serta dukungan sistem untuk kebutuhan user internal.</p>
+          </div>
+
+          <div class="skill-columns">
+            <div class="surface-card">
+              <div class="skill-stack">
+                <div class="skill-row">
+                  <div class="skill-meta"><span>HTML / CSS / UI Implementation</span><span>Core</span></div>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-meta"><span>JavaScript</span><span>Core</span></div>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-meta"><span>PHP / Laravel</span><span>Core</span></div>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 84%;"></div></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-meta"><span>MySQL / SQL Data Handling</span><span>Working</span></div>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-meta"><span>System Troubleshooting</span><span>Core</span></div>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-row">
+                  <div class="skill-meta"><span>Operational App Support</span><span>Core</span></div>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-cloud">
+                <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML</span>
+                <span class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="skill-pill"><i class="fa-brands fa-php"></i> PHP</span>
+                <span class="skill-pill"><i class="fa-brands fa-laravel"></i> Laravel</span>
+                <span class="skill-pill"><i class="fa-solid fa-database"></i> MySQL</span>
+                <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+                <span class="skill-pill"><i class="fa-solid fa-server"></i> REST API</span>
+                <span class="skill-pill"><i class="fa-solid fa-screwdriver-wrench"></i> Troubleshooting</span>
+              </div>
+            </div>
+
+            <div class="focus-grid">
+              <div class="focus-card">
+                <strong>Operational Understanding</strong>
+                <p>Memahami alur kerja aplikasi operasional, mengidentifikasi kendala penggunaan, dan menyesuaikan solusi dengan kebutuhan lapangan.</p>
+              </div>
+              <div class="focus-card">
+                <strong>Technical Troubleshooting</strong>
+                <p>Mampu menganalisis akar masalah, menelusuri penyebab error, dan mengarahkan tindak lanjut teknis secara sistematis.</p>
+              </div>
+              <div class="focus-card">
+                <strong>System Support Mindset</strong>
+                <p>Menggabungkan kemampuan programming dengan pendekatan support yang berorientasi stabilitas sistem, kejelasan proses, dan efektivitas kerja user.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="education">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Education</span>
+              <h2>Latar belakang pendidikan</h2>
+            </div>
+            <p>Pendidikan formal yang mendukung dasar pemrograman, analisis sistem, IoT, dan troubleshooting teknis.</p>
+          </div>
+
+          <div class="education-grid">
+            <article class="education-card">
+              <span class="period">2020 - 2024</span>
+              <h3>Sarjana Teknik Informatika<br>Universitas Nurdin Hamzah Jambi</h3>
+              <p><strong>IPK:</strong> 3.78 / 4.00</p>
+              <ul class="clean-list">
+                <li>Fokus pembelajaran pada software development, analisis data, IoT, dan sistem informasi.</li>
+                <li>Skripsi: Prototype Sistem Smart Garden Berbasis IoT.</li>
+              </ul>
+            </article>
+
+            <article class="education-card">
+              <span class="period">2013 - 2016</span>
+              <h3>SMK Negeri 1 Natar Lampung Selatan<br>Teknik Elektronika Industri</h3>
+              <p>Fondasi awal di bidang elektronika industri dan sistem kendali yang kemudian memperkuat cara berpikir troubleshooting sampai sekarang.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-card" id="contact">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Contact</span>
+              <h2>Kontak dan koneksi profesional</h2>
+            </div>
+            <p>Terbuka untuk diskusi profesional, kolaborasi project, dan peluang kerja di bidang IT, system support, maupun pengembangan aplikasi.</p>
+          </div>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <p>Silakan hubungi melalui email atau profil profesional berikut untuk komunikasi lebih lanjut.</p>
+              <ul class="contact-list">
+                <li class="contact-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <div>
+                    <strong>Email</strong>
+                    <a href="mailto:adzypurnomo@gmail.com">adzypurnomo@gmail.com</a>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                  <div>
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/adzipurnomo18/" target="_blank" rel="noreferrer">linkedin.com/in/adzipurnomo18</a>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <i class="fa-brands fa-github"></i>
+                  <div>
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/Adzipurnomo18" target="_blank" rel="noreferrer">github.com/Adzipurnomo18</a>
+                  </div>
+                </li>
+                <li class="contact-item">
+                  <i class="fa-brands fa-youtube"></i>
+                  <div>
+                    <strong>YouTube</strong>
+                    <a href="https://www.youtube.com/@adzp18" target="_blank" rel="noreferrer">youtube.com/@adzp18</a>
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            <article class="contact-card">
+              <form class="contact-form" id="contactForm">
+                <div class="field-row">
+                  <label class="field">
+                    <span>Nama</span>
+                    <input type="text" name="name" placeholder="Nama Anda" required>
+                  </label>
+                  <label class="field">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="email@domain.com" required>
+                  </label>
+                </div>
+                <label class="field">
+                  <span>Subjek</span>
+                  <input type="text" name="subject" placeholder="Tujuan kontak" required>
+                </label>
+                <label class="field">
+                  <span>Pesan</span>
+                  <textarea name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                </label>
+                <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i> Send to WhatsApp</button>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <div class="footer-note">
+          <span>© 2026 Adzi Purnomo. All rights reserved.</span>
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/adzipurnomo18/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/Adzipurnomo18" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:adzypurnomo@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <div class="section-head">
-        <h2 data-i18n="exp_title">Experience</h2>
-        <p data-i18n="exp_subtitle">Teknisi CE (Consumer Electronics) di PT SITCOMTARA (2017 - 2025)</p>
-      </div>
-      <div class="bento-grid">
-        <div class="bento-card span-6" data-aos="fade-up">
-          <h3 data-i18n="exp_role_title">Role Impact</h3>
-          <ul class="impact-list">
-            <li data-i18n="exp_role_1">Diagnosa dan perbaikan 500+ perangkat dengan keberhasilan 98% di kunjungan pertama.</li>
-            <li data-i18n="exp_role_2">Instalasi dan edukasi teknis untuk 200+ pelanggan.</li>
-            <li data-i18n="exp_role_3">Efisiensi diagnosa awal naik hingga 90% lewat analisis pola kerusakan.</li>
-          </ul>
-        </div>
-        <div class="bento-card span-6" data-aos="fade-up" data-aos-delay="150">
-          <h3 data-i18n="exp_service_title">Service Excellence</h3>
-          <ul class="impact-list">
-            <li data-i18n="exp_service_1">Kolaborasi dengan tim service untuk menjaga standar layanan Samsung.</li>
-            <li data-i18n="exp_service_2">Dokumentasi kasus dan rekomendasi perawatan preventif.</li>
-            <li data-i18n="exp_service_3">Penguatan KPI layanan melalui troubleshooting berbasis data.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <h2 data-i18n="projects_title">Projects</h2>
-        <p data-i18n="projects_subtitle">Beberapa proyek unggulan dengan fokus pada pengalaman visual modern.</p>
-      </div>
-      <div class="bento-grid projects-grid">
-        <article class="bento-card project-card span-12" data-aos="fade-up">
-          <h3 data-i18n="project_suite_title">Apps Suite Gallery</h3>
-          <p data-i18n="project_suite_body">
-            Koleksi tampilan aplikasi yang pernah saya bangun untuk kebutuhan web, service center,
-            dan sistem arsip. Klik untuk melihat seluruh screenshot secara lengkap.
-          </p>
-          <div class="project-tags">
-            <span data-i18n="project_suite_tag_1">Web Apps</span>
-            <span data-i18n="project_suite_tag_2">Service System</span>
-            <span data-i18n="project_suite_tag_3">Archive Platform</span>
-          </div>
-          <div class="gallery-preview">
-            <div class="gallery-thumb"><img src="assets/projects/apps-adzi-web-1.png" alt="Apps Adzi Web 1"></div>
-            <div class="gallery-thumb"><img src="assets/projects/apps-elektron-1.png" alt="Apps Elektron 1"></div>
-            <div class="gallery-thumb"><img src="assets/projects/arsip-unh-1.png" alt="Arsip UNH 1"></div>
-          </div>
-          <button class="btn" onclick="openModal('modalAppsSuite')" data-i18n="project_btn_gallery">Lihat Gallery</button>
-        </article>
-
-        <article class="bento-card project-card span-7" data-aos="fade-up">
-          <h3>Website Portfolio</h3>
-          <p data-i18n="project_1_body">
-            Layanan pengembangan website dari desain hingga implementasi. Website responsif dan
-            interaktif menggunakan HTML, CSS, JavaScript, dan PHP.
-          </p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
-          </div>
-          <button class="btn" onclick="openModal('modalPortfolio1')" data-i18n="project_btn_view">Lihat Screenshot</button>
-        </article>
-
-        <article class="bento-card project-card span-5" data-aos="fade-up" data-aos-delay="120">
-          <h3>Graphic Design Project</h3>
-          <p data-i18n="project_2_body">
-            Desain logo, banner, dan visual media sosial dengan Adobe Photoshop, Figma, dan Canva.
-          </p>
-          <div class="project-tags">
-            <span>Figma</span><span>Photoshop</span><span>Canva</span>
-          </div>
-          <button class="btn" onclick="openModal('modalPortfolio2')" data-i18n="project_btn_view">Lihat Screenshot</button>
-        </article>
-
-        <article class="bento-card project-card span-5" data-aos="fade-up">
-          <h3>Mobile App Development</h3>
-          <p data-i18n="project_3_body">
-            Aplikasi mobile untuk manajemen tugas menggunakan Flutter dan Firebase sebagai backend.
-          </p>
-          <div class="project-tags">
-            <span>Flutter</span><span>Firebase</span><span>UX</span>
-          </div>
-          <button class="btn" onclick="openModal('modalPortfolio3')" data-i18n="project_btn_view">Lihat Screenshot</button>
-        </article>
-
-        <article class="bento-card project-card span-7" data-aos="fade-up" data-aos-delay="120">
-          <h3>Video Editing Portfolio</h3>
-          <p data-i18n="project_4_body">
-            Proyek video editing untuk media sosial dan presentasi dengan efek visual dan transisi modern.
-          </p>
-          <div class="project-tags">
-            <span>CapCut</span><span>KineMaster</span><span>Motion</span>
-          </div>
-          <button class="btn" onclick="zoomVideo('https://youtu.be/dVN2JlRGd7k?si=e18ld6nPfDKZY_xj')" data-i18n="project_btn_video">Lihat Video</button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <div class="section-head">
-        <h2 data-i18n="skills_title">Skills</h2>
-        <p data-i18n="skills_subtitle">Teknologi yang dikuasai untuk membangun solusi digital end-to-end.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-html5"></i><p>HTML</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-php"></i><p>PHP</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-solid fa-database"></i><p>MySQL</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-laravel"></i><p>Laravel</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-react"></i><p>React</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-brands fa-git-alt"></i><p>Git</p></div>
-        <div class="bento-card skill-card span-3" data-aos="zoom-in"><i class="fa-solid fa-code"></i><p>Golang</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <div class="container">
-      <div class="section-head">
-        <h2 data-i18n="edu_title">Education</h2>
-        <p data-i18n="edu_subtitle">Perjalanan akademik dan fokus pembelajaran utama.</p>
-      </div>
-      <div class="bento-grid education-grid">
-        <div class="bento-card span-6" data-aos="fade-up">
-          <h3>Sarjana Teknik Informatika - Universitas Nurdin Hamzah Jambi</h3>
-          <span class="edu-year">2020 - 2024</span>
-          <p><strong data-i18n="edu_gpa_label">IPK:</strong> <span>3.78/4.00</span></p>
-          <ul class="impact-list">
-            <li data-i18n="edu_focus_1">Fokus: Pengembangan Perangkat Lunak, Analisis Data, IoT, Sistem Informasi.</li>
-            <li data-i18n="edu_focus_2">Skripsi: Prototype Sistem Smart Garden Berbasis IoT.</li>
-          </ul>
-        </div>
-        <div class="bento-card span-6" data-aos="fade-up" data-aos-delay="120">
-          <h3>SMK Negeri 1 Natar Lampung Selatan - Teknik Elektronika Industri</h3>
-          <span class="edu-year">2013 - 2016</span>
-          <p data-i18n="edu_focus_3">Konsentrasi pada elektronika industri dan sistem kendali.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <div class="container">
-      <div class="bento-card contact-card" data-aos="fade-up">
-        <p><strong data-i18n="contact_title">Terima kasih sudah berkunjung.</strong></p>
-        <p data-i18n="contact_body">Jika Anda ingin berdiskusi lebih lanjut atau memiliki pertanyaan terkait layanan saya, silakan kirim pesan menggunakan formulir berikut. Saya akan merespons secepat mungkin secara profesional.</p>
-        <span class="contact-cta"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="contact_cta">Formulir ini langsung mengarah ke email saya.</span></span>
-        <form class="contact-form" action="mailto:adzypurnomo@gmail.com" method="POST" enctype="text/plain">
-          <label class="contact-field">
-            <span data-i18n="contact_label_name">Nama</span>
-            <input type="text" name="name" placeholder="Nama kamu" required data-i18n-placeholder="contact_placeholder_name">
-          </label>
-          <label class="contact-field">
-            <span data-i18n="contact_label_email">Email</span>
-            <input type="email" name="email" placeholder="email@domain.com" required data-i18n-placeholder="contact_placeholder_email">
-          </label>
-          <label class="contact-field">
-            <span data-i18n="contact_label_subject">Subjek</span>
-            <input type="text" name="subject" placeholder="Judul pesan" required data-i18n-placeholder="contact_placeholder_subject">
-          </label>
-          <label class="contact-field">
-            <span data-i18n="contact_label_message">Pesan</span>
-            <textarea name="message" placeholder="Tulis pesan kamu di sini..." required data-i18n-placeholder="contact_placeholder_message"></textarea>
-          </label>
-          <button class="btn" type="submit" data-i18n="contact_btn">Kirim Email</button>
-        </form>
-      </div>
-      <p data-i18n="footer_copy">@ 2025 Adzi Purnomo. All Rights Reserved.</p>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/adzipurnomo18/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Adzipurnomo18" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.youtube.com/@adzp18" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
-    <span class="close" onclick="closeZoom()">&times;</span>
-    <div class="zoom-content">
-      <img id="zoomedImage" src="" alt="Zoomed">
-      <iframe id="zoomedVideo" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
+    </main>
   </div>
 
-  <div id="modalPortfolio1" class="modal" onclick="closeModal('modalPortfolio1')">
-    <span class="close" onclick="closeModal('modalPortfolio1')">&times;</span>
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <img src="https://cdn.pixabay.com/photo/2025/09/16/04/31/service-9836993_1280.png" onclick="zoomImage(this.src)" alt="Portfolio 1">
-      <img src="https://cdn.pixabay.com/photo/2024/11/30/04/27/app-9234005_1280.png" onclick="zoomImage(this.src)" alt="Portfolio 2">
-      <img src="https://cdn.pixabay.com/photo/2024/11/30/05/00/database-9234032_1280.png" onclick="zoomImage(this.src)" alt="Portfolio 3">
-    </div>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Close preview">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img id="lightboxImage" src="" alt="Project Preview">
   </div>
 
-    <div id="modalPortfolio2" class="modal" onclick="closeModal('modalPortfolio2')">
-      <span class="close" onclick="closeModal('modalPortfolio2')">&times;</span>
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <img src="https://cdn.pixabay.com/photo/2024/11/30/04/28/design-9234006_960_720.png" onclick="zoomImage(this.src)" alt="Design 1">
-        <img src="https://cdn.pixabay.com/photo/2025/09/16/02/40/figma-9836904_1280.png" onclick="zoomImage(this.src)" alt="Design 2">
-      </div>
-    </div>
-
-  <div id="modalPortfolio3" class="modal" onclick="closeModal('modalPortfolio3')">
-    <span class="close" onclick="closeModal('modalPortfolio3')">&times;</span>
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <img src="https://cdn.pixabay.com/photo/2024/11/30/04/23/web-9234002_1280.png" onclick="zoomImage(this.src)" alt="App 1">
-      <img src="https://cdn.pixabay.com/photo/2024/11/30/04/47/web-9234021_1280.png" onclick="zoomImage(this.src)" alt="App 2">
-      <img src="https://cdn.pixabay.com/photo/2024/11/30/04/46/app-9234020_1280.png" onclick="zoomImage(this.src)" alt="App 3">
-    </div>
-  </div>
-
-  <div id="modalAppsSuite" class="modal gallery-modal" onclick="closeModal('modalAppsSuite')">
-    <span class="close" onclick="closeModal('modalAppsSuite')">&times;</span>
-    <div class="modal-content gallery-content" onclick="event.stopPropagation()">
-      <div class="gallery-toolbar">
-        <div class="gallery-filters">
-          <button class="gallery-filter active" type="button" data-filter="all" data-i18n="gallery_filter_all">Semua</button>
-          <button class="gallery-filter" type="button" data-filter="web" data-i18n="gallery_filter_web">Web Apps</button>
-          <button class="gallery-filter" type="button" data-filter="service" data-i18n="gallery_filter_service">Service</button>
-          <button class="gallery-filter" type="button" data-filter="archive" data-i18n="gallery_filter_archive">Arsip</button>
-        </div>
-        <div class="gallery-count"><span data-i18n="gallery_count_label">Total</span>: <span id="galleryCount">0</span></div>
-      </div>
-      <div class="gallery-grid" id="appsSuiteGallery">
-        <img src="assets/projects/apps-adzi-web-1.png" onclick="zoomImage(this.src)" alt="Apps Adzi Web 1" data-category="web">
-        <img src="assets/projects/apps-adzi-web-2.png" onclick="zoomImage(this.src)" alt="Apps Adzi Web 2" data-category="web">
-        <img src="assets/projects/apps-adzi-web-3.png" onclick="zoomImage(this.src)" alt="Apps Adzi Web 3" data-category="web">
-        <img src="assets/projects/apps-adzi-web-4.png" onclick="zoomImage(this.src)" alt="Apps Adzi Web 4" data-category="web">
-        <img src="assets/projects/apps-adzi-web-5.png" onclick="zoomImage(this.src)" alt="Apps Adzi Web 5" data-category="web">
-        <img src="assets/projects/apps-adzi-web-6.png" onclick="zoomImage(this.src)" alt="Apps Adzi Web 6" data-category="web">
-        <img src="assets/projects/apps-elektron-1.png" onclick="zoomImage(this.src)" alt="Apps Elektron 1" data-category="service">
-        <img src="assets/projects/apps-elektron-2.png" onclick="zoomImage(this.src)" alt="Apps Elektron 2" data-category="service">
-        <img src="assets/projects/apps-elektron-3.png" onclick="zoomImage(this.src)" alt="Apps Elektron 3" data-category="service">
-        <img src="assets/projects/apps-elektron-4.png" onclick="zoomImage(this.src)" alt="Apps Elektron 4" data-category="service">
-        <img src="assets/projects/apps-elektron-5.png" onclick="zoomImage(this.src)" alt="Apps Elektron 5" data-category="service">
-        <img src="assets/projects/apps-service-1.png" onclick="zoomImage(this.src)" alt="Apps Service 1" data-category="service">
-        <img src="assets/projects/apps-service-2.png" onclick="zoomImage(this.src)" alt="Apps Service 2" data-category="service">
-        <img src="assets/projects/apps-service-3.png" onclick="zoomImage(this.src)" alt="Apps Service 3" data-category="service">
-        <img src="assets/projects/arsip-unh-1.png" onclick="zoomImage(this.src)" alt="Arsip UNH 1" data-category="archive">
-        <img src="assets/projects/arsip-unh-2.png" onclick="zoomImage(this.src)" alt="Arsip UNH 2" data-category="archive">
-        <img src="assets/projects/arsip-unh-3.png" onclick="zoomImage(this.src)" alt="Arsip UNH 3" data-category="archive">
-        <img src="assets/projects/arsip-unh-4.png" onclick="zoomImage(this.src)" alt="Arsip UNH 4" data-category="archive">
-        <img src="assets/projects/arsip-unh-5.png" onclick="zoomImage(this.src)" alt="Arsip UNH 5" data-category="archive">
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    var translations = {
-      id: {
-        nav_home: "Home",
-        nav_about: "About",
-        nav_experience: "Experience",
-        nav_projects: "Projects",
-        nav_skills: "Skills",
-        nav_education: "Education",
-        nav_contact: "Contact",
-        hero_eyebrow: "Future CV",
-        hero_subtitle: "Technician | Web Developer | IT Staff",
-        hero_chip_1: "IoT Builder",
-        hero_chip_2: "Web Systems",
-        hero_chip_3: "Hardware + Software",
-        hero_cta_primary: "Explore My Work",
-        hero_cta_secondary: "Contact Me",
-        hero_profile_desc: "Berbasis di Indonesia. Terbiasa menangani produk elektronik, sistem IoT, dan aplikasi berbasis web.",
-        hero_focus_label: "Focus",
-        hero_focus_value: "IoT, Web Apps, Automation",
-        hero_stack_label: "Stack",
-        hero_stack_value: "JS, Python, PHP, MySQL",
-        about_title: "About Me",
-        about_subtitle: "Profil singkat dengan fokus pada kemampuan teknis, analisis, dan solusi digital modern.",
-        about_body: "Lulusan S1 Teknik Informatika dengan IPK 3.78, memiliki latar belakang sebagai teknisi elektronik konsumen di PT SITCOMTARA sejak 2017. Terbiasa melakukan troubleshooting perangkat, analisis teknis, dan edukasi pelanggan secara profesional. Berpengalaman mengembangkan solusi berbasis teknologi seperti IoT dan pemrograman sistem berbasis web.",
-        about_item_1: "Analisis perangkat dan otomasi sistem.",
-        about_item_2: "Pengembangan web responsif dan interaktif.",
-        about_item_3: "Integrasi IoT untuk monitoring real time.",
-        about_item_4: "Edukasi teknis dan komunikasi dengan klien.",
-        exp_title: "Experience",
-        exp_subtitle: "Teknisi CE (Consumer Electronics) di PT SITCOMTARA (2017 - 2025)",
-        exp_role_title: "Role Impact",
-        exp_role_1: "Diagnosa dan perbaikan 500+ perangkat dengan keberhasilan 98% di kunjungan pertama.",
-        exp_role_2: "Instalasi dan edukasi teknis untuk 200+ pelanggan.",
-        exp_role_3: "Efisiensi diagnosa awal naik hingga 90% lewat analisis pola kerusakan.",
-        exp_service_title: "Service Excellence",
-        exp_service_1: "Kolaborasi dengan tim service untuk menjaga standar layanan Samsung.",
-        exp_service_2: "Dokumentasi kasus dan rekomendasi perawatan preventif.",
-        exp_service_3: "Penguatan KPI layanan melalui troubleshooting berbasis data.",
-        projects_title: "Projects",
-        projects_subtitle: "Beberapa proyek unggulan dengan fokus pada pengalaman visual modern.",
-        project_suite_title: "Apps Suite Gallery",
-        project_suite_body: "Koleksi tampilan aplikasi yang pernah saya bangun untuk kebutuhan web, service center, dan sistem arsip. Klik untuk melihat seluruh screenshot secara lengkap.",
-        project_suite_tag_1: "Web Apps",
-        project_suite_tag_2: "Service System",
-        project_suite_tag_3: "Archive Platform",
-        gallery_filter_all: "Semua",
-        gallery_filter_web: "Web Apps",
-        gallery_filter_service: "Service",
-        gallery_filter_archive: "Arsip",
-        gallery_count_label: "Total",
-        project_1_body: "Layanan pengembangan website dari desain hingga implementasi. Website responsif dan interaktif menggunakan HTML, CSS, JavaScript, dan PHP.",
-        project_2_body: "Desain logo, banner, dan visual media sosial dengan Adobe Photoshop, Figma, dan Canva.",
-        project_3_body: "Aplikasi mobile untuk manajemen tugas menggunakan Flutter dan Firebase sebagai backend.",
-        project_4_body: "Proyek video editing untuk media sosial dan presentasi dengan efek visual dan transisi modern.",
-        project_btn_view: "Lihat Screenshot",
-        project_btn_gallery: "Lihat Gallery",
-        project_btn_video: "Lihat Video",
-        skills_title: "Skills",
-        skills_subtitle: "Teknologi yang dikuasai untuk membangun solusi digital end-to-end.",
-        edu_title: "Education",
-        edu_subtitle: "Perjalanan akademik dan fokus pembelajaran utama.",
-        edu_gpa_label: "IPK:",
-        edu_focus_1: "Fokus: Pengembangan Perangkat Lunak, Analisis Data, IoT, Sistem Informasi.",
-        edu_focus_2: "Skripsi: Prototype Sistem Smart Garden Berbasis IoT.",
-        edu_focus_3: "Konsentrasi pada elektronika industri dan sistem kendali.",
-        contact_title: "Terima kasih sudah berkunjung.",
-        contact_body: "Jika Anda ingin berdiskusi lebih lanjut atau memiliki pertanyaan terkait layanan saya, silakan kirim pesan menggunakan formulir berikut. Saya akan merespons secepat mungkin secara profesional.",
-        contact_cta: "Formulir ini langsung mengarah ke email saya.",
-        contact_label_name: "Nama",
-        contact_label_email: "Email",
-        contact_label_subject: "Subjek",
-        contact_label_message: "Pesan",
-        contact_placeholder_name: "Nama kamu",
-        contact_placeholder_email: "email@domain.com",
-        contact_placeholder_subject: "Judul pesan",
-        contact_placeholder_message: "Tulis pesan kamu di sini...",
-        contact_btn: "Kirim Email",
-        footer_copy: "@ 2025 Adzi Purnomo. All Rights Reserved."
-      },
-      en: {
-        nav_home: "Home",
-        nav_about: "About",
-        nav_experience: "Experience",
-        nav_projects: "Projects",
-        nav_skills: "Skills",
-        nav_education: "Education",
-        nav_contact: "Contact",
-        hero_eyebrow: "Future CV",
-        hero_subtitle: "Technician | Web Developer | IT Staff",
-        hero_chip_1: "IoT Builder",
-        hero_chip_2: "Web Systems",
-        hero_chip_3: "Hardware + Software",
-        hero_cta_primary: "Explore My Work",
-        hero_cta_secondary: "Contact Me",
-        hero_profile_desc: "Based in Indonesia. Experienced in handling electronics, IoT systems, and web-based applications.",
-        hero_focus_label: "Focus",
-        hero_focus_value: "IoT, Web Apps, Automation",
-        hero_stack_label: "Stack",
-        hero_stack_value: "JS, Python, PHP, MySQL",
-        about_title: "About Me",
-        about_subtitle: "A concise profile focused on technical capability, analysis, and modern digital solutions.",
-        about_body: "Computer Science graduate (GPA 3.78) with a background as a consumer electronics technician at PT SITCOMTARA since 2017. Skilled in troubleshooting, technical analysis, and professional customer education. Experienced in building technology solutions such as IoT and web-based systems.",
-        about_item_1: "Device analysis and system automation.",
-        about_item_2: "Responsive and interactive web development.",
-        about_item_3: "IoT integration for real-time monitoring.",
-        about_item_4: "Technical education and client communication.",
-        exp_title: "Experience",
-        exp_subtitle: "CE Technician (Consumer Electronics) at PT SITCOMTARA (2017 - 2025)",
-        exp_role_title: "Role Impact",
-        exp_role_1: "Diagnosed and repaired 500+ devices with a 98% first-visit success rate.",
-        exp_role_2: "Installation and technical education for 200+ customers.",
-        exp_role_3: "Boosted initial diagnosis efficiency by up to 90% through fault pattern analysis.",
-        exp_service_title: "Service Excellence",
-        exp_service_1: "Collaborated with service teams to maintain Samsung service standards.",
-        exp_service_2: "Documented cases and delivered preventive maintenance recommendations.",
-        exp_service_3: "Strengthened service KPIs through data-driven troubleshooting.",
-        projects_title: "Projects",
-        projects_subtitle: "Selected work with a focus on modern visual experience.",
-        project_suite_title: "Apps Suite Gallery",
-        project_suite_body: "A collection of app interfaces I built for web, service center, and archival systems. Click to view the complete screenshot gallery.",
-        project_suite_tag_1: "Web Apps",
-        project_suite_tag_2: "Service System",
-        project_suite_tag_3: "Archive Platform",
-        gallery_filter_all: "All",
-        gallery_filter_web: "Web Apps",
-        gallery_filter_service: "Service",
-        gallery_filter_archive: "Archive",
-        gallery_count_label: "Total",
-        project_1_body: "Website development service from design to implementation. Responsive and interactive websites using HTML, CSS, JavaScript, and PHP.",
-        project_2_body: "Logo, banner, and social media visual design using Adobe Photoshop, Figma, and Canva.",
-        project_3_body: "A mobile app for task management using Flutter and Firebase as the backend.",
-        project_4_body: "Video editing projects for social media and presentations with modern visual transitions.",
-        project_btn_view: "View Screenshots",
-        project_btn_gallery: "View Gallery",
-        project_btn_video: "Watch Video",
-        skills_title: "Skills",
-        skills_subtitle: "Technologies used to build end-to-end digital solutions.",
-        edu_title: "Education",
-        edu_subtitle: "Academic journey and primary focus areas.",
-        edu_gpa_label: "GPA:",
-        edu_focus_1: "Focus: Software Development, Data Analysis, IoT, Information Systems.",
-        edu_focus_2: "Thesis: IoT-based Smart Garden System Prototype.",
-        edu_focus_3: "Concentration in industrial electronics and control systems.",
-        contact_title: "Thank you for visiting.",
-        contact_body: "If you would like to discuss further or have any questions about my services, please send a message using the form below. I will respond as promptly and professionally as possible.",
-        contact_cta: "This form sends your message directly to my email.",
-        contact_label_name: "Name",
-        contact_label_email: "Email",
-        contact_label_subject: "Subject",
-        contact_label_message: "Message",
-        contact_placeholder_name: "Your name",
-        contact_placeholder_email: "email@domain.com",
-        contact_placeholder_subject: "Message subject",
-        contact_placeholder_message: "Write your message here...",
-        contact_btn: "Send Email",
-        footer_copy: "Ac 2025 Adzi Purnomo. All Rights Reserved."
-      }
-    };
-
-    function applyLanguage(lang) {
-      var textNodes = document.querySelectorAll("[data-i18n]");
-      textNodes.forEach(function(node) {
-        var key = node.getAttribute("data-i18n");
-        if (translations[lang] && translations[lang][key]) {
-          node.textContent = translations[lang][key];
-        }
-      });
-
-      var placeholders = document.querySelectorAll("[data-i18n-placeholder]");
-      placeholders.forEach(function(node) {
-        var key = node.getAttribute("data-i18n-placeholder");
-        if (translations[lang] && translations[lang][key]) {
-          node.setAttribute("placeholder", translations[lang][key]);
-        }
-      });
-
-      var toggle = document.getElementById("langToggle");
-      if (toggle) {
-        toggle.textContent = lang === "id" ? "EN" : "ID";
-      }
-      document.documentElement.setAttribute("lang", lang);
-      try {
-        localStorage.setItem("cvLang", lang);
-      } catch (e) {}
-    }
-
-    function animateCount(el) {
-      var target = parseFloat(el.getAttribute("data-target") || "0");
-      var suffix = el.getAttribute("data-suffix") || "";
-      var duration = 1200;
-      var start = 0;
-      var startTime = null;
-
-      function tick(timestamp) {
-        if (!startTime) {
-          startTime = timestamp;
-        }
-        var progress = Math.min((timestamp - startTime) / duration, 1);
-        var value = Math.floor(start + (target - start) * progress);
-        el.textContent = String(value) + suffix;
-        if (progress < 1) {
-          requestAnimationFrame(tick);
-        } else {
-          el.textContent = String(target) + suffix;
-        }
-      }
-
-      requestAnimationFrame(tick);
-    }
-
-    function initCounters() {
-      var counters = document.querySelectorAll(".count-up");
-      if (!counters.length) {
-        return;
-      }
-
+    (function () {
       var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduceMotion) {
-        counters.forEach(function(counter) {
-          var suffix = counter.getAttribute("data-suffix") || "";
-          var target = counter.getAttribute("data-target") || "0";
-          counter.textContent = String(target) + suffix;
-        });
-        return;
+      var whatsappNumber = "6282281388718";
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
+      var anchorLinks = Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]'));
+      var sections = navLinks
+        .map(function (link) {
+          var id = link.getAttribute("href");
+          return document.querySelector(id);
+        })
+        .filter(Boolean);
+      var topbar = document.querySelector(".topbar");
+
+      function getAnchorOffset() {
+        var fallback = window.innerWidth <= 760 ? 84 : 108;
+        if (!topbar) {
+          return fallback;
+        }
+
+        return topbar.offsetHeight + 20;
       }
 
-      var observer = new IntersectionObserver(function(entries, obs) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            animateCount(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.6 });
-
-      counters.forEach(function(counter) {
-        observer.observe(counter);
-      });
-    }
-
-    function initGalleryFilters() {
-      var gallery = document.getElementById("appsSuiteGallery");
-      var countEl = document.getElementById("galleryCount");
-      var filters = document.querySelectorAll(".gallery-filter");
-      if (!gallery || !filters.length) {
-        return;
-      }
-
-      var items = Array.prototype.slice.call(gallery.querySelectorAll("img"));
-
-      function updateCount() {
-        if (!countEl) {
+      function scrollToSection(target) {
+        if (!target) {
           return;
         }
-        var visible = items.filter(function(item) {
-          return item.style.display !== "none";
-        }).length;
-        countEl.textContent = String(visible);
+
+        var offset = getAnchorOffset();
+        var top = window.pageYOffset + target.getBoundingClientRect().top - offset;
+        window.scrollTo({
+          top: Math.max(0, top),
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
       }
 
-      function applyFilter(filter) {
-        items.forEach(function(item) {
-          var category = item.getAttribute("data-category") || "";
-          if (filter === "all" || filter === category) {
-            item.style.display = "block";
-          } else {
-            item.style.display = "none";
+      anchorLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          var href = link.getAttribute("href");
+          if (!href || href === "#") {
+            return;
+          }
+
+          var target = document.querySelector(href);
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+          scrollToSection(target);
+
+          if (history.replaceState) {
+            history.replaceState(null, "", href);
           }
         });
-        updateCount();
+      });
+
+      if ("IntersectionObserver" in window && sections.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            var id = "#" + entry.target.id;
+            navLinks.forEach(function (link) {
+              link.classList.toggle("is-active", link.getAttribute("href") === id);
+            });
+          });
+        }, {
+          rootMargin: "-32% 0px -52% 0px",
+          threshold: 0
+        });
+
+        sections.forEach(function (section) {
+          observer.observe(section);
+        });
       }
 
-      filters.forEach(function(button) {
-        button.addEventListener("click", function() {
-          filters.forEach(function(btn) { btn.classList.remove("active"); });
-          button.classList.add("active");
-          applyFilter(button.getAttribute("data-filter") || "all");
+      var scrollTopBtn = document.getElementById("scrollTopBtn");
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      var lightbox = document.getElementById("lightbox");
+      var lightboxImage = document.getElementById("lightboxImage");
+      var lightboxClose = document.getElementById("lightboxClose");
+      var previewCards = document.querySelectorAll("[data-preview]");
+      var contactForm = document.getElementById("contactForm");
+
+      function closeLightbox() {
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.setAttribute("src", "");
+      }
+
+      previewCards.forEach(function (preview) {
+        preview.addEventListener("click", function () {
+          var src = preview.getAttribute("data-preview");
+          if (!src || !lightbox || !lightboxImage) {
+            return;
+          }
+          lightboxImage.setAttribute("src", src);
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
         });
       });
 
-      applyFilter("all");
-    }
-
-    function openModal(id) {
-      var modal = document.getElementById(id);
-      if (modal) {
-        modal.style.display = "flex";
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeLightbox);
       }
-    }
 
-    function closeModal(id) {
-      var modal = document.getElementById(id);
-      if (modal) {
-        modal.style.display = "none";
+      if (lightbox) {
+        lightbox.addEventListener("click", function (event) {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
       }
-    }
 
-    function zoomImage(src) {
-      var zoomModal = document.getElementById("zoomModal");
-      var zoomedImage = document.getElementById("zoomedImage");
-      var zoomedVideo = document.getElementById("zoomedVideo");
-      if (!zoomModal || !zoomedImage || !zoomedVideo) {
-        return;
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var formData = new FormData(contactForm);
+          var name = (formData.get("name") || "").toString().trim();
+          var email = (formData.get("email") || "").toString().trim();
+          var subject = (formData.get("subject") || "").toString().trim();
+          var message = (formData.get("message") || "").toString().trim();
+
+          var whatsappMessage = [
+            "Halo Adzi, saya ingin menghubungi Anda melalui website CV.",
+            "",
+            "Nama: " + name,
+            "Email: " + email,
+            "Subjek: " + subject,
+            "Pesan:",
+            message
+          ].join("\n");
+
+          var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+          window.open(whatsappUrl, "_blank", "noopener");
+        });
       }
-      zoomedVideo.style.display = "none";
-      zoomedImage.style.display = "block";
-      zoomedImage.src = src;
-      zoomModal.style.display = "flex";
-    }
 
-    function zoomVideo(youtubeUrl) {
-      var zoomModal = document.getElementById("zoomModal");
-      var zoomedImage = document.getElementById("zoomedImage");
-      var zoomedVideo = document.getElementById("zoomedVideo");
-      if (!zoomModal || !zoomedImage || !zoomedVideo) {
-        return;
+      function formatCountValue(target, suffix) {
+        return String(target) + (suffix || "");
       }
-      var embedUrl = youtubeUrl.replace("youtu.be/", "www.youtube.com/embed/").split("?")[0];
-      zoomedImage.style.display = "none";
-      zoomedVideo.style.display = "block";
-      zoomedVideo.src = embedUrl;
-      zoomModal.style.display = "flex";
-    }
 
-    function closeZoom() {
-      var zoomModal = document.getElementById("zoomModal");
-      var zoomedImage = document.getElementById("zoomedImage");
-      var zoomedVideo = document.getElementById("zoomedVideo");
-      if (zoomModal) {
-        zoomModal.style.display = "none";
+      function animateCount(element) {
+        if (!element || element.dataset.counted === "true") {
+          return;
+        }
+
+        var target = parseInt(element.getAttribute("data-target") || "0", 10);
+        var suffix = element.getAttribute("data-suffix") || "";
+        if (isNaN(target)) {
+          return;
+        }
+
+        if (reduceMotion) {
+          element.textContent = formatCountValue(target, suffix);
+          element.dataset.counted = "true";
+          return;
+        }
+
+        var duration = 1100;
+        var startTime = null;
+
+        function tick(timestamp) {
+          if (!startTime) {
+            startTime = timestamp;
+          }
+
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var value = Math.round(target * eased);
+          element.textContent = formatCountValue(value, suffix);
+
+          if (progress < 1) {
+            window.requestAnimationFrame(tick);
+          } else {
+            element.textContent = formatCountValue(target, suffix);
+            element.dataset.counted = "true";
+          }
+        }
+
+        element.textContent = formatCountValue(0, suffix);
+        window.requestAnimationFrame(tick);
       }
-      if (zoomedImage) {
-        zoomedImage.src = "";
-      }
-      if (zoomedVideo) {
-        zoomedVideo.src = "";
-      }
-    }
 
-    AOS.init({
-      duration: 900,
-      once: true
-    });
-
-    var lastScrollTop = 0;
-    var header = document.querySelector("header");
-    var langToggle = document.getElementById("langToggle");
-    var themeToggle = document.getElementById("themeToggle");
-    var savedLang = "id";
-
-    try {
-      savedLang = localStorage.getItem("cvLang") || "id";
-    } catch (e) {}
-    applyLanguage(savedLang);
-
-    function applyTheme(theme) {
-      document.body.setAttribute("data-theme", theme);
-      if (themeToggle) {
-        themeToggle.textContent = theme === "dark" ? "LIGHT" : "DARK";
-      }
-      try {
-        localStorage.setItem("cvTheme", theme);
-      } catch (e) {}
-    }
-
-    var savedTheme = "dark";
-    try {
-      savedTheme = localStorage.getItem("cvTheme") || "dark";
-    } catch (e) {}
-    applyTheme(savedTheme);
-
-    if (langToggle) {
-      langToggle.addEventListener("click", function() {
-        var current = document.documentElement.getAttribute("lang") || "id";
-        var next = current === "id" ? "en" : "id";
-        applyLanguage(next);
+      var interactiveCards = document.querySelectorAll(".metric-card, .surface-card, .project-card, .contact-card, .timeline-body, .timeline-meta, .education-card, .focus-card");
+      interactiveCards.forEach(function (card) {
+        card.classList.add("interactive-card");
       });
-    }
 
-    if (themeToggle) {
-      themeToggle.addEventListener("click", function() {
-        var currentTheme = document.body.getAttribute("data-theme") || "dark";
-        var nextTheme = currentTheme === "dark" ? "light" : "dark";
-        applyTheme(nextTheme);
+      var countItems = document.querySelectorAll(".count-up");
+      countItems.forEach(function (item) {
+        var target = parseInt(item.getAttribute("data-target") || "0", 10);
+        var suffix = item.getAttribute("data-suffix") || "";
+        if (!isNaN(target)) {
+          item.textContent = reduceMotion ? formatCountValue(target, suffix) : formatCountValue(0, suffix);
+        }
       });
-    }
 
-    initCounters();
-    initGalleryFilters();
+      var motionItems = document.querySelectorAll(".timeline-list li, .clean-list li");
+      motionItems.forEach(function (item, index) {
+        item.classList.add("motion-item");
+        item.style.transitionDelay = Math.min(index * 70, 280) + "ms";
+      });
 
-    window.addEventListener("scroll", function() {
-      if (!header) {
-        return;
+      var chart = document.querySelector(".line-chart");
+      if (chart) {
+        var polylines = chart.querySelectorAll("polyline");
+        var circles = chart.querySelectorAll("circle");
+
+        polylines.forEach(function (line, index) {
+          line.classList.add("chart-line");
+          if (index > 0) {
+            line.classList.add("chart-line-secondary");
+          }
+        });
+
+        circles.forEach(function (dot, index) {
+          dot.classList.add("chart-dot");
+          if (index > 0) {
+            dot.classList.add("chart-dot-secondary");
+          }
+        });
       }
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      var headerHeight = header.offsetHeight || 80;
-      if (scrollTop > lastScrollTop) {
-        header.style.top = "-" + headerHeight + "px";
+
+      var skillRows = document.querySelectorAll(".skill-row");
+      skillRows.forEach(function (row) {
+        var fill = row.querySelector(".skill-fill");
+        if (!fill) {
+          return;
+        }
+
+        var targetWidth = fill.style.width || "0%";
+        fill.style.setProperty("--target-width", targetWidth);
+        row.style.setProperty("--target-width", targetWidth);
+
+        if (reduceMotion) {
+          row.classList.add("is-visible");
+        }
+      });
+
+      if ("IntersectionObserver" in window) {
+        var motionObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("is-visible");
+            if (entry.target.classList.contains("count-up")) {
+              animateCount(entry.target);
+            }
+            observer.unobserve(entry.target);
+          });
+        }, {
+          threshold: 0.05,
+          rootMargin: "0px 0px -2% 0px"
+        });
+
+        motionItems.forEach(function (item) {
+          motionObserver.observe(item);
+        });
+
+        skillRows.forEach(function (row) {
+          motionObserver.observe(row);
+        });
+
+        if (chart) {
+          motionObserver.observe(chart);
+        }
+
+        countItems.forEach(function (item) {
+          motionObserver.observe(item);
+        });
       } else {
-        header.style.top = "0";
+        motionItems.forEach(function (item) {
+          item.classList.add("is-visible");
+        });
+
+        skillRows.forEach(function (row) {
+          row.classList.add("is-visible");
+        });
+
+        if (chart) {
+          chart.classList.add("is-visible");
+        }
+
+        countItems.forEach(function (item) {
+          animateCount(item);
+        });
       }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
+
+      if (!reduceMotion) {
+        interactiveCards.forEach(function (card) {
+          card.addEventListener("pointermove", function (event) {
+            var rect = card.getBoundingClientRect();
+            var px = (event.clientX - rect.left) / rect.width;
+            var py = (event.clientY - rect.top) / rect.height;
+            var rotateY = (px - 0.5) * 6;
+            var rotateX = (0.5 - py) * 6;
+            card.style.transform = "perspective(1000px) rotateX(" + rotateX.toFixed(2) + "deg) rotateY(" + rotateY.toFixed(2) + "deg) translateY(-4px)";
+          });
+
+          card.addEventListener("pointerleave", function () {
+            card.style.transform = "";
+          });
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
